@@ -514,6 +514,104 @@ em {
   border-color: var(--muted);
 }
 
+/* Form */
+.form-block {
+  margin-top: var(--space-5);
+  display: grid;
+  gap: var(--space-4);
+  max-width: 28rem;
+}
+
+.form-field {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.form-field label {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.form-optional {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--muted);
+}
+
+.form-required {
+  color: var(--accent-deep);
+}
+
+.form-field input {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  transition: border-color var(--transition);
+  -webkit-appearance: none;
+}
+
+.form-field input::placeholder {
+  color: var(--muted);
+  opacity: 0.7;
+}
+
+.form-field input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* Team grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+.team-group {
+  padding: 1.5rem 1.35rem 1.6rem;
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.team-role {
+  margin-bottom: var(--space-2);
+  color: var(--accent-deep);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.team-names {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+@media (max-width: 860px) {
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Footer */
 .site-footer {
   border-top: 1px solid var(--border-soft);
