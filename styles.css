@@ -381,6 +381,16 @@ em {
   margin-bottom: 0;
 }
 
+.chapter-range {
+  font-size: 0.85em;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.section-cta {
+  margin-top: var(--space-6);
+}
+
 .text-link {
   display: inline-flex;
   align-items: center;
