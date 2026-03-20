@@ -198,6 +198,10 @@ em {
   padding-bottom: var(--space-7);
 }
 
+.hero-compact h1 {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+}
+
 .hero-home {
   padding-top: calc(var(--space-8) + 1rem);
 }
@@ -616,6 +620,22 @@ em {
   margin-bottom: 0;
   color: var(--muted);
   font-size: 1rem;
+}
+
+.team-names a {
+  color: var(--muted);
+}
+
+.team-names a:hover,
+.team-names a:focus-visible {
+  color: var(--accent-deep);
+}
+
+.team-desc {
+  margin-top: var(--space-2);
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
 }
 
 @media (max-width: 860px) {
