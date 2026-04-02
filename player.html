@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        .player-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            background-color: #fafafa;
+            /* Optional styling suitable for clean embedding */
+        }
+        audio {
+            width: 100%;
+            max-width: 100%;
+            height: 54px; /* Standard browser default */
+            outline: none;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="player-container">
+        <audio id="audio-player" controls preload="metadata">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const src = urlParams.get('src');
+            const chapter = urlParams.get('chapter');
+            const type = urlParams.get('type');
+
+            const audioPlayer = document.getElementById('audio-player');
+
+            if (src) {
+                audioPlayer.src = src;
+            } else {
+                console.warn("No audio source provided. Expected usage: ?src=URL");
+            }
+
+            const logEvent = (eventName, cTime) => {
+                const eventData = {
+                    event: eventName,
+                    currentTime: Math.round(cTime)
+                };
+                
+                if (chapter) eventData.chapter = chapter;
+                if (type) eventData.type = type;
+
+                console.log(JSON.stringify(eventData, null, 2));
+            };
+
+            audioPlayer.addEventListener('play', () => {
+                logEvent('play', audioPlayer.currentTime);
+            });
+
+            audioPlayer.addEventListener('pause', () => {
+                logEvent('pause', audioPlayer.currentTime);
+            });
+
+            audioPlayer.addEventListener('ended', () => {
+                logEvent('ended', audioPlayer.currentTime);
+            });
+
+            let lastIntervalLogged = -1;
+
+            audioPlayer.addEventListener('timeupdate', () => {
+                const currentTime = audioPlayer.currentTime;
+                // Only begin tracking once we pass 0 significantly
+                if (currentTime <= 0.1) return;
+                
+                // Group by 10s intervals (e.g. 10..19 => interval 1)
+                const currentInterval = Math.floor(currentTime / 10);
+
+                if (currentInterval > lastIntervalLogged && currentInterval > 0) {
+                    logEvent('time', currentTime);
+                    lastIntervalLogged = currentInterval;
+                }
+            });
+
+            // Adjust interval correctly when user scrubs timeline
+            audioPlayer.addEventListener('seeked', () => {
+                lastIntervalLogged = Math.floor(audioPlayer.currentTime / 10);
+            });
+        });
+    </script>
+</body>
+</html>
