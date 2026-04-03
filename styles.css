@@ -917,6 +917,19 @@ em {
   white-space: nowrap;
 }
 
+.footer-contact {
+  white-space: nowrap;
+}
+
+.footer-contact a {
+  color: inherit;
+}
+
+.footer-contact a:hover,
+.footer-contact a:focus-visible {
+  color: var(--accent-deep);
+}
+
 /* Paper cards (compact research entries) */
 .paper-grid {
   display: grid;
