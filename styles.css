@@ -276,6 +276,40 @@ em {
   color: var(--accent-deep);
 }
 
+.hero-audio-tracks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: 0 0.75rem 0.5rem;
+}
+
+.hero-audio-chip {
+  margin: 0;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.hero-audio-chip:hover,
+.hero-audio-chip:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-deep);
+  outline: none;
+}
+
+.hero-audio-chip[aria-current="true"] {
+  border-color: var(--accent);
+  background: rgba(102, 113, 91, 0.1);
+  color: var(--accent-deep);
+}
+
 .hero-audio-frame {
   display: block;
   width: 100%;
@@ -290,34 +324,8 @@ em {
   font-size: 1.02rem;
 }
 
-.preview-chapter-nav {
-  margin-top: var(--space-4);
-}
-
-.preview-chapter-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-  gap: var(--space-2) var(--space-4);
-  max-width: 48rem;
-}
-
-.preview-chapter-list li {
-  margin: 0;
-}
-
-.preview-chapter-list a {
-  display: inline-block;
-  font-family: var(--font-sans);
-  font-size: 0.94rem;
-  font-weight: 600;
-  padding: 0.35rem 0;
-}
-
 .preview-gitbook-cta {
-  margin-top: var(--space-5);
+  margin-top: var(--space-4);
   margin-bottom: 0;
 }
 
@@ -366,6 +374,119 @@ em {
   font-size: 0.78rem;
   line-height: 1.45;
   color: var(--text);
+}
+
+/* Owner page (The Owner Book) */
+.owner-page .hero-with-player .hero-player-layout {
+  align-items: center;
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 21rem);
+  gap: clamp(var(--space-5), 4vw, var(--space-7));
+}
+
+@media (min-width: 861px) {
+  .owner-page .hero-with-player .hero-player-copy {
+    padding-right: var(--space-2);
+  }
+}
+
+.owner-page .hero-audio {
+  width: 100%;
+  max-width: 21rem;
+  margin-left: auto;
+  padding-bottom: 0;
+  overflow: hidden;
+  box-shadow: 0 0.35rem 1.35rem rgba(31, 31, 26, 0.07);
+}
+
+.owner-page .hero-audio-label {
+  padding: 0.85rem 1.1rem 0.4rem;
+}
+
+.owner-page .hero-audio-tracks {
+  padding: 0 1rem 0.5rem;
+}
+
+.owner-page .hero-audio-frame {
+  height: 5.35rem;
+  display: block;
+}
+
+.owner-page .hero-audio-hint {
+  margin: 0;
+  padding: 0.4rem 1rem 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--muted);
+  border-top: 1px solid var(--border-soft);
+}
+
+.owner-page #read-the-preview .owner-read-kickoff {
+  max-width: 42rem;
+  margin-bottom: var(--space-5);
+}
+
+.owner-page #read-the-preview .preview-embed-docs {
+  max-width: 48rem;
+}
+
+.owner-page .owner-found-lead {
+  margin-bottom: var(--space-4);
+}
+
+.owner-page .owner-found-lead p:last-of-type {
+  margin-bottom: 0;
+}
+
+.owner-page .owner-found-section .section-cta {
+  margin-top: var(--space-5);
+}
+
+.owner-page .chapter-list {
+  max-width: 52rem;
+}
+
+.owner-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.hero-text-compact {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+.owner-page .hero-story-hook {
+  margin-bottom: var(--space-4);
+  color: var(--text);
+  font-size: 1.06rem;
+}
+
+.owner-page .owner-feedback-hint {
+  margin-top: var(--space-3);
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  max-width: 38rem;
+}
+
+.owner-about-merged .owner-about-meta {
+  margin-bottom: var(--space-4);
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.owner-about-parts {
+  margin-top: var(--space-4);
+}
+
+.owner-about-parts .chapter-item h3 {
+  font-size: 1.05rem;
 }
 
 /* Shared content layouts */
@@ -889,12 +1010,25 @@ em {
     max-width: none;
   }
 
-  .hero-with-player .hero-player-layout {
+  .hero-with-player .hero-player-layout,
+  .owner-page .hero-with-player .hero-player-layout {
     grid-template-columns: 1fr;
   }
 
   .hero-audio {
-    max-width: 24rem;
+    max-width: none;
+    width: 100%;
+  }
+
+  .owner-page .hero-audio {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .owner-page .hero-audio-chip {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.88rem;
   }
 }
 
@@ -930,12 +1064,23 @@ em {
     width: 100%;
   }
 
+  .owner-hero-actions .button-link {
+    width: 100%;
+    justify-content: center;
+  }
+
   .cta-links {
     width: 100%;
   }
 
-  .hero-audio {
-    max-width: none;
-    width: 100%;
+  .owner-page .hero-audio-chip {
+    padding: 0.5rem 1rem;
+    font-size: 0.92rem;
+    min-height: 2.5rem;
+  }
+
+  .owner-page .hero-audio-tracks {
+    gap: var(--space-2);
+    padding: 0.15rem 0.75rem 0.65rem;
   }
 }

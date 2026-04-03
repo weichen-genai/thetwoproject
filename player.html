@@ -54,6 +54,7 @@
             const src = urlParams.get('src');
             const chapter = urlParams.get('chapter');
             const type = urlParams.get('type');
+            const autoplay = urlParams.get('autoplay') === '1';
 
             const audioPlayer = document.getElementById('audio-player');
 
@@ -61,6 +62,17 @@
                 audioPlayer.src = src;
             } else {
                 console.warn("No audio source provided. Expected usage: ?src=URL");
+            }
+
+            if (autoplay && src) {
+                const tryPlay = () => {
+                    audioPlayer.play().catch(() => {});
+                };
+                if (audioPlayer.readyState >= 3) {
+                    tryPlay();
+                } else {
+                    audioPlayer.addEventListener('canplay', tryPlay, { once: true });
+                }
             }
 
             const props = {
@@ -83,6 +95,14 @@
 
             audioPlayer.addEventListener('ended', () => {
                 track('Audio Complete');
+                if (window.parent !== window) {
+                    try {
+                        window.parent.postMessage(
+                            { type: 'twoproject-audio-ended', chapter: chapter || '' },
+                            '*'
+                        );
+                    } catch (e) {}
+                }
             });
         });
     </script>
