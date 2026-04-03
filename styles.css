@@ -245,6 +245,129 @@ em {
   font-size: 1.12rem;
 }
 
+.hero-with-player .hero-player-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(12rem, 17.5rem);
+  align-items: start;
+  gap: var(--space-6);
+}
+
+.hero-with-player .hero-player-copy {
+  max-width: none;
+}
+
+.hero-audio {
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 0.5rem 1.5rem rgba(31, 31, 26, 0.05);
+}
+
+.hero-audio-label {
+  margin: 0;
+  padding: 0.65rem 1rem 0.35rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+.hero-audio-frame {
+  display: block;
+  width: 100%;
+  height: 4.75rem;
+  border: 0;
+  background: transparent;
+}
+
+.preview-lede {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.preview-chapter-nav {
+  margin-top: var(--space-4);
+}
+
+.preview-chapter-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: var(--space-2) var(--space-4);
+  max-width: 48rem;
+}
+
+.preview-chapter-list li {
+  margin: 0;
+}
+
+.preview-chapter-list a {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.94rem;
+  font-weight: 600;
+  padding: 0.35rem 0;
+}
+
+.preview-gitbook-cta {
+  margin-top: var(--space-5);
+  margin-bottom: 0;
+}
+
+.preview-crosslink {
+  margin-top: var(--space-3);
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.preview-embed-docs {
+  margin-top: var(--space-6);
+  padding: var(--space-4);
+  max-width: 40rem;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  background: rgba(251, 249, 244, 0.6);
+}
+
+.preview-embed-docs summary {
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.preview-embed-intro {
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-3);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.preview-embed-intro code {
+  font-size: 0.88em;
+}
+
+.preview-embed-code {
+  margin: 0;
+  padding: var(--space-3);
+  overflow-x: auto;
+  border-radius: calc(var(--radius) - 2px);
+  background: var(--surface-strong);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--text);
+}
+
 /* Shared content layouts */
 .feature-grid,
 .status-grid,
@@ -765,6 +888,14 @@ em {
   .hero-panel-compact {
     max-width: none;
   }
+
+  .hero-with-player .hero-player-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-audio {
+    max-width: 24rem;
+  }
 }
 
 @media (max-width: 640px) {
@@ -800,6 +931,11 @@ em {
   }
 
   .cta-links {
+    width: 100%;
+  }
+
+  .hero-audio {
+    max-width: none;
     width: 100%;
   }
 }

@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audio Player</title>
+    <!-- Same Plausible site script as main pages; no pageview in iframe (audio events only) -->
+    <script async src="https://plausible.io/js/pa-7a8gF1ZVN_QGPx2doBvLg.js"></script>
+    <script>
+        window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+        plausible.init({ autoCapturePageviews: false })
+    </script>
     <style>
         html, body {
             margin: 0;
@@ -24,8 +30,7 @@
             align-items: center;
             justify-content: center;
             box-sizing: border-box;
-            background-color: #fafafa;
-            /* Optional styling suitable for clean embedding */
+            background-color: transparent;
         }
         audio {
             width: 100%;
@@ -58,49 +63,26 @@
                 console.warn("No audio source provided. Expected usage: ?src=URL");
             }
 
-            const logEvent = (eventName, cTime) => {
-                const eventData = {
-                    event: eventName,
-                    currentTime: Math.round(cTime)
-                };
-                
-                if (chapter) eventData.chapter = chapter;
-                if (type) eventData.type = type;
-
-                console.log(JSON.stringify(eventData, null, 2));
+            const props = {
+                chapter: chapter && chapter.length ? chapter : 'none',
+                type: type && type.length ? type : 'none'
             };
 
-            audioPlayer.addEventListener('play', () => {
-                logEvent('play', audioPlayer.currentTime);
-            });
+            const track = (eventName) => {
+                if (typeof window.plausible !== 'function') return;
+                window.plausible(eventName, { props: props });
+            };
 
-            audioPlayer.addEventListener('pause', () => {
-                logEvent('pause', audioPlayer.currentTime);
+            let audioPlaySent = false;
+
+            audioPlayer.addEventListener('play', () => {
+                if (audioPlaySent) return;
+                audioPlaySent = true;
+                track('Audio Play');
             });
 
             audioPlayer.addEventListener('ended', () => {
-                logEvent('ended', audioPlayer.currentTime);
-            });
-
-            let lastIntervalLogged = -1;
-
-            audioPlayer.addEventListener('timeupdate', () => {
-                const currentTime = audioPlayer.currentTime;
-                // Only begin tracking once we pass 0 significantly
-                if (currentTime <= 0.1) return;
-                
-                // Group by 10s intervals (e.g. 10..19 => interval 1)
-                const currentInterval = Math.floor(currentTime / 10);
-
-                if (currentInterval > lastIntervalLogged && currentInterval > 0) {
-                    logEvent('time', currentTime);
-                    lastIntervalLogged = currentInterval;
-                }
-            });
-
-            // Adjust interval correctly when user scrubs timeline
-            audioPlayer.addEventListener('seeked', () => {
-                lastIntervalLogged = Math.floor(audioPlayer.currentTime / 10);
+                track('Audio Complete');
             });
         });
     </script>

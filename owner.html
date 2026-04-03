@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="The Owner Book is the narrative expression of the T-W-O framework.">
   <title>The Owner | The T-W-O Project</title>
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-7a8gF1ZVN_QGPx2doBvLg.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -23,17 +29,64 @@
   </header>
 
   <main>
-    <section class="hero hero-compact">
+    <section class="hero hero-compact hero-with-player">
       <div class="site-shell">
-        <div class="hero-panel hero-panel-flat hero-panel-compact narrow-flow">
-          <p class="eyebrow">Book project</p>
-          <h1>The Owner</h1>
-          <p class="hero-subtitle">a business novel about the work in the GenAI era</p>
-          <p class="hero-line">A business novel about what happens when AI changes tasks but nobody owns the workflow.</p>
-          <p class="hero-text">The book turns the T-W-O thesis into narrative form: meetings, incentives, uncertainty, and the practical struggle of deciding who is responsible for redesigning work.</p>
-          <p class="hero-text">An open preview of the first eight chapters is available online. The full book will follow the same characters through the entire T-W-O arc.</p>
-          <a class="button-link" href="https://thetwoproject.gitbook.io/the-owner-preview" target="_blank" rel="noopener noreferrer">Read the first 8 chapters</a>
+        <div class="hero-player-layout">
+          <div class="hero-panel hero-panel-flat hero-panel-compact hero-player-copy">
+            <p class="eyebrow">Book project</p>
+            <h1>The Owner</h1>
+            <p class="hero-subtitle">a business novel about the work in the GenAI era</p>
+            <p class="hero-line">A business novel about what happens when AI changes tasks but nobody owns the workflow.</p>
+            <p class="hero-text">The book turns the T-W-O thesis into narrative form: meetings, incentives, uncertainty, and the practical struggle of deciding who is responsible for redesigning work.</p>
+            <p class="hero-text">An open preview of the introduction and first eight chapters is on GitBook. The full book will follow the same characters through the entire T-W-O arc.</p>
+            <p class="hero-text"><a class="text-link" href="#read-the-preview">Read the preview on GitBook</a></p>
+          </div>
+          <aside class="hero-audio" aria-label="Audiobook player">
+            <p class="hero-audio-label">Product Player</p>
+            <iframe
+              class="hero-audio-frame"
+              title="The Owner audiobook player"
+              loading="lazy"
+              src="player.html?chapter=owner-book&amp;type=site"
+            ></iframe>
+          </aside>
         </div>
+      </div>
+    </section>
+
+    <section id="read-the-preview" class="section section-bordered" aria-labelledby="read-preview-heading">
+      <div class="site-shell">
+        <div class="section-intro narrow-flow">
+          <p class="section-label">Preview</p>
+          <h2 id="read-preview-heading">Introduction and first eight chapters</h2>
+          <p class="preview-lede">Read on GitBook. The same audio player can be embedded in each chapter—use the snippet below with your hosted audio URL.</p>
+        </div>
+        <nav class="preview-chapter-nav" aria-label="GitBook preview chapters">
+          <ul class="preview-chapter-list">
+            <li><a href="https://thetwoproject.gitbook.io/the-owner-preview/introduction" target="_blank" rel="noopener noreferrer">Introduction</a></li>
+            <li><a href="https://thetwoproject.gitbook.io/the-owner-preview/ch01-all-the-numbers-were-right" target="_blank" rel="noopener noreferrer">Chapter 1</a></li>
+            <li><a href="https://thetwoproject.gitbook.io/the-owner-preview/ch02-the-obvious-solution" target="_blank" rel="noopener noreferrer">Chapter 2</a></li>
+            <li><a href="https://thetwoproject.gitbook.io/the-owner-preview/ch03-asking-the-right-way" target="_blank" rel="noopener noreferrer">Chapter 3</a></li>
+            <li><a href="https://thetwoproject.gitbook.io/the-owner-preview/ch04-what-the-system-remembered" target="_blank" rel="noopener noreferrer">Chapter 4</a></li>
+            <li><a href="https://thetwoproject.gitbook.io/the-owner-preview/ch05-local-wins-everywhere" target="_blank" rel="noopener noreferrer">Chapter 5</a></li>
+            <li><a href="https://thetwoproject.gitbook.io/the-owner-preview/ch06-quiet-workarounds" target="_blank" rel="noopener noreferrer">Chapter 6</a></li>
+            <li><a href="https://thetwoproject.gitbook.io/the-owner-preview/ch07-the-confident-error" target="_blank" rel="noopener noreferrer">Chapter 7</a></li>
+            <li><a href="https://thetwoproject.gitbook.io/the-owner-preview/ch08-postmortem-without-owner" target="_blank" rel="noopener noreferrer">Chapter 8</a></li>
+          </ul>
+        </nav>
+        <p class="preview-gitbook-cta"><a class="button-link button-link-secondary" href="https://thetwoproject.gitbook.io/the-owner-preview" target="_blank" rel="noopener noreferrer">Open full book on GitBook</a></p>
+        <details class="preview-embed-docs">
+          <summary>Embed this player in GitBook (per chapter)</summary>
+          <p class="preview-embed-intro">Host <code>player.html</code> on this site, then add an HTML block in each chapter. Replace the audio URL and chapter id. Use your live site origin instead of the example.</p>
+          <pre class="preview-embed-code">&lt;iframe
+  src="https://thetwoproject.com/player.html?src=YOUR_ENCODED_AUDIO_URL&amp;chapter=1&amp;type=preview"
+  title="Chapter audio"
+  width="100%"
+  height="72"
+  style="border:0;max-width:100%;"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</pre>
+        </details>
       </div>
     </section>
 
@@ -64,6 +117,7 @@
         <div class="section-intro narrow-flow">
           <p class="section-label">First 8 chapters</p>
           <h2>Start with the opening arc of the story.</h2>
+          <p class="preview-crosslink">Jump to <a href="#read-the-preview">Introduction and first eight chapters</a> for GitBook links to each part of the public preview.</p>
         </div>
         <div class="card-grid compact-grid">
           <article class="info-card">
@@ -78,9 +132,6 @@
             <h3>Where it fits in</h3>
             <p>These eight chapters set up the central conflicts that later parts of the book resolve using the T-W-O lens on tasks, workflows, and organizations.</p>
           </article>
-        </div>
-        <div class="section-cta">
-          <a class="button-link" href="https://thetwoproject.gitbook.io/the-owner-preview" target="_blank" rel="noopener noreferrer">Read the first 8 chapters</a>
         </div>
       </div>
     </section>
