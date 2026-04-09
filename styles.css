@@ -930,6 +930,18 @@ em {
   color: var(--accent-deep);
 }
 
+/* Layer letter (research page) */
+.layer-letter {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-serif);
+  font-size: clamp(3.2rem, 6vw, 4.6rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--accent-deep);
+  opacity: 0.25;
+}
+
 /* Paper cards (compact research entries) */
 .paper-grid {
   display: grid;
