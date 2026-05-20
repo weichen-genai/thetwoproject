@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Owner — business novel in soft launch. Read and listen to eight free chapters on GitBook, and share feedback.">
+  <meta name="description" content="The Owner — a business novel about work in the GenAI era. Available now on Kindle and paperback, with eight free audiobook preview chapters while Audible review is in progress.">
   <title>The Owner | The T-W-O Project</title>
   <!-- Privacy-friendly analytics by Plausible -->
   <script async src="https://plausible.io/js/pa-7a8gF1ZVN_QGPx2doBvLg.js"></script>
@@ -29,41 +29,69 @@
   </header>
 
   <main class="owner-page">
-    <section class="hero hero-compact hero-with-player">
+    <section class="hero hero-compact">
       <div class="site-shell">
-        <div class="hero-player-layout">
-          <div class="hero-panel hero-panel-flat hero-panel-compact hero-player-copy">
-            <p class="eyebrow">Soft launch</p>
+        <div class="owner-hero-layout">
+
+          <!-- Left: copy + audio player -->
+          <div class="owner-hero-copy">
             <h1>The Owner</h1>
             <p class="hero-subtitle">a business novel about work in the GenAI era</p>
             <p class="hero-line">AI changes tasks. Workflows need owners.</p>
-            <p class="hero-text">Eight free chapters on GitBook, all with audio. Founding readers get twenty during soft launch. Read, listen, and tell us what lands.</p>
-            <div class="owner-hero-actions">
-              <a class="button-link" href="https://thetwoproject.gitbook.io/the-owner-preview" target="_blank" rel="noopener noreferrer">Start reading</a>
-              <a class="button-link button-link-secondary" href="https://forms.office.com/pages/responsepage.aspx?id=7DV4JXDP7Ea5owqiSpEIjIlp9XTLSmpHv5DMLnl9vzZUMkVLSFNKWFdXRFRSQUJYWFhLT0RJSUdNNi4u&amp;route=shorturl" target="_blank" rel="noopener noreferrer">Share feedback</a>
+            <p class="hero-text">For leaders, operators, and builders asking why demos succeed and production stalls.</p>
+            <p class="owner-availability">Now available in Kindle and paperback, with the audiobook preview below while Audible review is in progress.</p>
+            <div class="owner-hero-actions owner-buy-actions">
+              <a class="owner-cta owner-cta-kindle" href="https://www.amazon.com/dp/B0H2771RH5/" target="_blank" rel="noopener noreferrer" id="btn-kindle">
+                <span class="owner-cta-kicker">ebook</span>
+                <span class="owner-cta-title">Read on Kindle</span>
+                <span class="owner-cta-note">Start instantly on Kindle or the free app.</span>
+              </a>
+              <a class="owner-cta owner-cta-paperback" href="https://www.amazon.com/dp/B0H2B6S18L" target="_blank" rel="noopener noreferrer" id="btn-paperback">
+                <span class="owner-cta-kicker">print</span>
+                <span class="owner-cta-title">Order Paperback</span>
+                <span class="owner-cta-note">For sharing and reading away from a screen.</span>
+              </a>
+              <a class="owner-cta owner-cta-audible" href="#owner-audiobook-preview" id="btn-audible">
+                <span class="owner-cta-kicker">audio</span>
+                <span class="owner-cta-title">Preview Audiobook</span>
+                <span class="owner-cta-note">Audible review in progress. Hear the first eight chapters below.</span>
+              </a>
+            </div>
+            <div class="owner-audio-intro" id="owner-audiobook-preview">
+              <p class="owner-audio-title">Preview the audiobook</p>
+              <p class="owner-audio-copy">Chapters 1–8 free — <a href="https://thetwoproject.gitbook.io/the-owner-preview" target="_blank" rel="noopener noreferrer">read on GitBook</a> or listen below.</p>
+            </div>
+            <aside class="hero-audio owner-hero-audio" aria-label="Audiobook player">
+              <p class="hero-audio-label">Choose a chapter</p>
+              <div class="hero-audio-tracks" role="group" aria-label="Preview chapters with audio">
+                <button type="button" class="hero-audio-chip" data-chapter="intro" data-audio-src="https%3A%2F%2Ftheowner-audio.s3.us-east-2.amazonaws.com%2FThe_Owner_Introduction.mp3" aria-current="true">Intro</button>
+                <button type="button" class="hero-audio-chip" data-chapter="1" data-audio-src="https%3A%2F%2Ftheowner-audio.s3.us-east-2.amazonaws.com%2FThe_Owner_Chapter_1.mp3">Ch. 1</button>
+                <button type="button" class="hero-audio-chip" data-chapter="2" data-audio-src="https%3A%2F%2Ftheowner-audio.s3.us-east-2.amazonaws.com%2FThe_Owner_Chapter_2.mp3">Ch. 2</button>
+                <button type="button" class="hero-audio-chip" data-chapter="3" data-audio-src="https%3A%2F%2Ftheowner-audio.s3.us-east-2.amazonaws.com%2FThe_Owner_Chapter_3.mp3">Ch. 3</button>
+                <button type="button" class="hero-audio-chip" data-chapter="4" data-audio-src="https%3A%2F%2Ftheowner-audio.s3.us-east-2.amazonaws.com%2FThe_Owner_Chapter_4.mp3">Ch. 4</button>
+                <button type="button" class="hero-audio-chip" data-chapter="5" data-audio-src="https%3A%2F%2Ftheowner-audio.s3.us-east-2.amazonaws.com%2FThe_Owner_Chapter_5.mp3">Ch. 5</button>
+                <button type="button" class="hero-audio-chip" data-chapter="6" data-audio-src="https%3A%2F%2Ftheowner-audio.s3.us-east-2.amazonaws.com%2FThe_Owner_Chapter_6.mp3">Ch. 6</button>
+                <button type="button" class="hero-audio-chip" data-chapter="7" data-audio-src="https%3A%2F%2Ftheowner-audio.s3.us-east-2.amazonaws.com%2FThe_Owner_Chapter_7.mp3">Ch. 7</button>
+                <button type="button" class="hero-audio-chip" data-chapter="8" data-audio-src="https%3A%2F%2Ftheowner-audio.s3.us-east-2.amazonaws.com%2FThe_Owner_Chapter_8.mp3">Ch. 8</button>
+              </div>
+              <iframe
+                id="owner-audio-frame"
+                class="hero-audio-frame"
+                title="The Owner audiobook player"
+                loading="lazy"
+                src="player.html?src=https%3A%2F%2Ftheowner-audio.s3.us-east-2.amazonaws.com%2FThe_Owner_Introduction.mp3&amp;chapter=intro&amp;type=site"
+              ></iframe>
+              <p class="hero-audio-hint">Plays in order. Jump anytime above.</p>
+            </aside>
+          </div>
+
+          <!-- Right: front cover (moves first on mobile via CSS order) -->
+          <div class="owner-hero-cover">
+            <div class="owner-cover-stage">
+              <img src="images/KDP_kindle_cover.jpg" alt="The Owner — book cover" width="640">
             </div>
           </div>
-          <aside class="hero-audio" aria-label="Audiobook player">
-            <p class="hero-audio-label">Listen</p>
-            <div class="hero-audio-tracks" role="group" aria-label="Preview chapters with audio">
-              <button type="button" class="hero-audio-chip" data-chapter="1" data-audio-src="https%3A%2F%2Ftheowner-audio.s3.us-east-2.amazonaws.com%2FThe_Owner_Chapter_1.mp3" aria-current="true">Ch. 1</button>
-              <button type="button" class="hero-audio-chip" data-chapter="2" data-audio-src="https%3A%2F%2Ftheowner-audio.s3.us-east-2.amazonaws.com%2FThe_Owner_Chapter_2.mp3">Ch. 2</button>
-              <button type="button" class="hero-audio-chip" data-chapter="3" data-audio-src="https%3A%2F%2Ftheowner-audio.s3.us-east-2.amazonaws.com%2FThe_Owner_Chapter_3.mp3">Ch. 3</button>
-              <button type="button" class="hero-audio-chip" data-chapter="4" data-audio-src="https%3A%2F%2Ftheowner-audio.s3.us-east-2.amazonaws.com%2FThe_Owner_Chapter_4.mp3">Ch. 4</button>
-              <button type="button" class="hero-audio-chip" data-chapter="5" data-audio-src="https%3A%2F%2Ftheowner-audio.s3.us-east-2.amazonaws.com%2FThe_Owner_Chapter_5.mp3">Ch. 5</button>
-              <button type="button" class="hero-audio-chip" data-chapter="6" data-audio-src="https%3A%2F%2Ftheowner-audio.s3.us-east-2.amazonaws.com%2FThe_Owner_Chapter_6.mp3">Ch. 6</button>
-              <button type="button" class="hero-audio-chip" data-chapter="7" data-audio-src="https%3A%2F%2Ftheowner-audio.s3.us-east-2.amazonaws.com%2FThe_Owner_Chapter_7.mp3">Ch. 7</button>
-              <button type="button" class="hero-audio-chip" data-chapter="8" data-audio-src="https%3A%2F%2Ftheowner-audio.s3.us-east-2.amazonaws.com%2FThe_Owner_Chapter_8.mp3">Ch. 8</button>
-            </div>
-            <iframe
-              id="owner-audio-frame"
-              class="hero-audio-frame"
-              title="The Owner audiobook player"
-              loading="lazy"
-              src="player.html?src=https%3A%2F%2Ftheowner-audio.s3.us-east-2.amazonaws.com%2FThe_Owner_Chapter_1.mp3&amp;chapter=1&amp;type=site"
-            ></iframe>
-            <p class="hero-audio-hint">Chapters 1–8 play in order when each track ends. Jump anytime with the buttons above.</p>
-          </aside>
+
         </div>
       </div>
     </section>
@@ -71,10 +99,10 @@
     <section class="section section-bordered section-quiet" aria-labelledby="about-book-heading">
       <div class="site-shell narrow-flow owner-about-merged">
         <p class="section-label">About</p>
-        <h2 id="about-book-heading">Organizational change, disguised as an AI initiative</h2>
-        <p><em>The Owner</em> follows Ethan, a transformation lead at Northstar Consulting, and two clients who make opposite choices—as GenAI pilots collide with workflows, incentives, and the question of who actually redesigns the work when tasks move.</p>
-        <p>For leaders, operators, and builders who care why demos succeed and production stalls—it is the narrative companion to the T-W-O framework (task, workflow, organization), without slide decks or jargon.</p>
-        <p class="owner-about-meta">Full manuscript: <strong>48 chapters</strong> in three parts. Public preview: <strong>8 chapters</strong>. Official launch: <strong>May 2026</strong>.</p>
+        <h2 id="about-book-heading">A business novel about who owns the redesign</h2>
+        <p><em>The Owner</em> follows Ethan, a transformation lead at Northstar Consulting, and two clients who make opposite choices as GenAI pilots collide with workflows, incentives, and the question of who actually redesigns the work once tasks start to move.</p>
+        <p>Now available in Kindle and paperback, with a free audiobook preview while Audible review is in progress, it is the narrative companion to the T-W-O framework for leaders, operators, and builders who care why demos succeed but production change stalls.</p>
+        <p class="owner-about-meta">Complete book: <strong>48 chapters</strong> in three parts. Free public preview: <strong>8 chapters</strong> in text and audio.</p>
         <div class="chapter-list owner-about-parts">
           <article class="chapter-item">
             <h3>Part I <span class="chapter-range">(1–16)</span></h3>
@@ -92,18 +120,74 @@
       </div>
     </section>
 
-    <section class="section section-bordered owner-found-section" aria-labelledby="founding-heading">
+    <section class="section section-bordered owner-reactions-section" aria-labelledby="reactions-heading">
       <div class="site-shell">
-        <div class="narrow-flow owner-found-lead">
-          <p class="section-label">Founding readers</p>
-          <h2 id="founding-heading">Twenty chapters during soft launch</h2>
-          <p>Go beyond the public eight: register for chapters 9–20 during soft launch, ahead of the May 2026 release. </p>
+        <div class="owner-reactions-intro">
+          <p class="section-label">Founding Reader Reactions</p>
+          <h2 id="reactions-heading">What early readers are saying</h2>
         </div>
-        <div class="section-cta owner-found-cta">
-          <a class="button-link" href="https://forms.office.com/pages/responsepage.aspx?id=7DV4JXDP7Ea5owqiSpEIjIlp9XTLSmpHv5DMLnl9vzZUQlIwU0VaM1NVQjJUSE0yMERPM1BPNVFPWS4u&amp;route=shorturl" target="_blank" rel="noopener noreferrer">Register as a founding reader</a>
+        <div class="owner-reactions-grid">
+          <figure class="owner-reaction-card owner-reaction-card-featured">
+            <blockquote class="owner-reaction-quote">
+              <p>“You show all the problems I have ever encountered... People and organizations have always been slow to change. This
+              time the technology is making that even more apparent at more companies. I'm fascinated to understand what will drive
+              companies to reorganize given the capabilities of the technology.”</p>
+            </blockquote>
+            <figcaption class="owner-reaction-meta">
+              <span class="owner-reaction-name">Paul Tyler</span>
+              <span class="owner-reaction-role">Head of Enterprise Marketing and Marketing Innovation, Zinnia</span>
+            </figcaption>
+          </figure>
+          <figure class="owner-reaction-card">
+            <blockquote class="owner-reaction-quote">
+              <p>“Your book completely captures the give and take between bosses and subordinates... It actually made me cringe a couple
+              times because it was so spot on.”</p>
+            </blockquote>
+            <figcaption class="owner-reaction-meta">
+              <span class="owner-reaction-name">John Logan</span>
+              <span class="owner-reaction-role">Serial Enterpreneur</span>
+            </figcaption>
+          </figure>
+          <!-- <figure class="owner-reaction-card">
+            <blockquote class="owner-reaction-quote">
+              <p>“The Orion scenario really lands. The ‘one phone number’ insight is on point as to how these decisions get made in
+              reality.”</p>
+            </blockquote>
+            <figcaption class="owner-reaction-meta">
+              <span class="owner-reaction-name">Jeff Wallace</span>
+              <span class="owner-reaction-role">The Batchery</span>
+            </figcaption>
+          </figure> -->
+          <figure class="owner-reaction-card">
+            <blockquote class="owner-reaction-quote">
+              <p>“Considering how many times I’ve shaken my head in agreement and the stress levels I feel while reading narrative and
+              situations I’ve faced for 10+ years... I’d say yes it’s very realistic.”</p>
+            </blockquote>
+            <figcaption class="owner-reaction-meta">
+              <span class="owner-reaction-name">Marla Dans</span>
+              <span class="owner-reaction-role">Chief Data Officer, Interim Group</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
+
+    <!-- Feedback -->
+    <section class="section owner-feedback-section" aria-labelledby="feedback-heading">
+      <div class="site-shell">
+        <div class="owner-feedback-layout">
+          <div>
+            <p class="section-label">Share your thoughts</p>
+            <h2 id="feedback-heading">Tell us what lands</h2>
+            <p>Read it, listened to it, taught with it? We want to hear what resonated — and what didn't. Your feedback shapes the next edition and the companion research.</p>
+          </div>
+          <div class="owner-feedback-cta">
+            <a class="button-link button-link-light" href="https://forms.office.com/pages/responsepage.aspx?id=7DV4JXDP7Ea5owqiSpEIjIlp9XTLSmpHv5DMLnl9vzZUMkVLSFNKWFdXRFRSQUJYWFhLT0RJSUdNNi4u&amp;route=shorturl" target="_blank" rel="noopener noreferrer" id="btn-feedback">Share feedback →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
@@ -132,12 +216,6 @@
         chip.setAttribute('aria-current', 'true');
       }
 
-      var maxChapter = 0;
-      chips.forEach(function (c) {
-        var v = parseInt(c.getAttribute('data-chapter'), 10);
-        if (!isNaN(v) && v > maxChapter) maxChapter = v;
-      });
-
       chips.forEach(function (chip) {
         chip.addEventListener('click', function () {
           loadAudioChapter(chip, false);
@@ -148,9 +226,10 @@
         if (event.source !== frame.contentWindow) return;
         var data = event.data;
         if (!data || data.type !== 'twoproject-audio-ended') return;
-        var n = parseInt(data.chapter, 10);
-        if (isNaN(n) || n < 1 || n >= maxChapter) return;
-        var nextChip = document.querySelector('.hero-audio-chip[data-chapter="' + (n + 1) + '"]');
+        var currentChip = document.querySelector('.hero-audio-chip[data-chapter="' + data.chapter + '"]');
+        if (!currentChip) return;
+        var nextChip = currentChip.nextElementSibling;
+        if (!nextChip || !nextChip.classList.contains('hero-audio-chip')) return;
         if (nextChip) loadAudioChapter(nextChip, true);
       });
     })();
