@@ -1280,6 +1280,123 @@ em {
   }
 }
 
+/* Workshop page */
+.workshop-step-list {
+  margin-top: var(--space-5);
+  display: grid;
+  gap: 0;
+}
+
+.workshop-step {
+  display: grid;
+  grid-template-columns: 2.75rem 1fr;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.workshop-step:last-child {
+  border-bottom: 0;
+}
+
+.workshop-step-num {
+  margin: 0;
+  padding-top: 0.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent-deep);
+}
+
+.workshop-step-body h3 {
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+}
+
+.workshop-step-body p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.97rem;
+}
+
+.workshop-venues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  margin-top: var(--space-3);
+}
+
+.workshop-venue {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+.workshop-format-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+.workshop-format-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem 1.5rem 1.7rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface);
+  box-shadow: 0 0.5rem 1.5rem rgba(31, 31, 26, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.workshop-format-card h3 {
+  margin-bottom: 0.7rem;
+  font-size: 1.15rem;
+}
+
+.workshop-format-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.workshop-format-duration {
+  margin-bottom: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+.workshop-cta-section {
+  border-top: 1px solid var(--border-soft);
+  background: linear-gradient(135deg, #2b3327 0%, #1c2319 100%);
+  color: #fff;
+}
+
+.workshop-cta-section .section-label {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.workshop-cta-section h2 {
+  color: #fff;
+}
+
+.workshop-cta-section p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+@media (max-width: 860px) {
+  .workshop-format-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Footer */
 .site-footer {
   border-top: 1px solid var(--border-soft);
