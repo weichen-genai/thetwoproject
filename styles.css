@@ -483,6 +483,57 @@ em {
   text-underline-offset: 2px;
 }
 
+.owner-preview-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.owner-preview-platform {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1;
+  transition: border-color var(--transition), background-color var(--transition), color var(--transition);
+}
+
+.owner-preview-platform:hover,
+.owner-preview-platform:focus-visible {
+  border-color: var(--accent);
+  background: rgba(102, 113, 91, 0.08);
+  color: var(--accent-deep);
+  outline: none;
+}
+
+.owner-preview-platform-icon {
+  width: 0.95rem;
+  height: 0.95rem;
+  fill: currentColor;
+  flex: 0 0 auto;
+}
+
+.owner-full-audio-cta {
+  margin: 0.85rem 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+}
+
+.owner-full-audio-cta a {
+  color: var(--accent-deep);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .owner-page .hero-audio {
   width: 100%;
   padding-bottom: 0;
