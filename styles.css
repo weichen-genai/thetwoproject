@@ -1336,6 +1336,7 @@ em {
   margin-top: var(--space-5);
   display: grid;
   gap: 0;
+  position: relative;
 }
 
 .workshop-step {
@@ -1344,19 +1345,38 @@ em {
   gap: var(--space-3);
   padding: var(--space-4) 0;
   border-bottom: 1px solid var(--border-soft);
+  position: relative;
 }
 
 .workshop-step:last-child {
   border-bottom: 0;
 }
 
+.workshop-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--space-4) + 2rem);
+  left: 1.375rem;
+  width: 1px;
+  height: calc(100% - var(--space-4) - 2rem);
+  background: var(--border-soft);
+}
+
 .workshop-step-num {
   margin: 0;
-  padding-top: 0.25rem;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   color: var(--accent-deep);
 }
 
@@ -1369,6 +1389,12 @@ em {
   margin-bottom: 0;
   color: var(--muted);
   font-size: 0.97rem;
+}
+
+.workshop-venues-intro {
+  margin: var(--space-2) 0 var(--space-3);
+  color: var(--muted);
+  font-size: 0.98rem;
 }
 
 .workshop-venues {
@@ -1384,6 +1410,56 @@ em {
   font-weight: 600;
   color: var(--muted);
   letter-spacing: 0.02em;
+}
+
+.workshop-venue-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.workshop-venue-logo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 5rem;
+  padding: 1.25rem 1rem;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  background: var(--surface);
+  text-align: center;
+  transition: background-color var(--transition), border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.workshop-venue-logo-card:hover,
+.workshop-venue-logo-card:focus-visible {
+  background: rgba(102, 113, 91, 0.07);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1.2rem rgba(31, 31, 26, 0.08);
+  outline: none;
+}
+
+.workshop-venue-logo-card-dark {
+  background: #1e2420;
+  border-color: #1e2420;
+}
+
+.workshop-venue-logo-card-dark:hover,
+.workshop-venue-logo-card-dark:focus-visible {
+  background: #2b332c;
+  border-color: #2b332c;
+}
+
+.workshop-venue-logo-img {
+  max-height: 52px;
+  max-width: 155px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .workshop-format-grid {
@@ -1424,6 +1500,25 @@ em {
   color: var(--accent-deep);
 }
 
+.workshop-format-features {
+  margin: var(--space-3) 0 var(--space-3);
+  padding-left: 1.1rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.workshop-format-features li {
+  margin-bottom: 0.2rem;
+}
+
+.workshop-format-link {
+  margin-top: var(--space-3);
+  font-size: 0.88rem;
+  align-self: flex-start;
+}
+
 .workshop-cta-section {
   border-top: 1px solid var(--border-soft);
   background: linear-gradient(135deg, #2b3327 0%, #1c2319 100%);
@@ -1445,6 +1540,10 @@ em {
 @media (max-width: 860px) {
   .workshop-format-grid {
     grid-template-columns: 1fr;
+  }
+
+  .workshop-venue-logo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

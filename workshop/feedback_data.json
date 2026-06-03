@@ -1,0 +1,45 @@
+{
+  "total_responses": 21,
+  "metrics": {
+    "value_avg": 4.9,
+    "value_distribution": {
+      "5 - Extremely Valuable": 19,
+      "4 - Valuable": 2,
+      "1 - 3 - Neutral/Low": 0
+    },
+    "recommend_avg": 5.0,
+    "recommend_distribution": {
+      "5 - Very Likely": 21,
+      "1 - 4 - Other": 0
+    }
+  },
+  "preferences": {
+    "Full Elective Course": 8,
+    "Multi-Week Workshop Series": 4,
+    "Short Embedded Session": 4,
+    "Standalone Semester Workshop": 5
+  },
+  "testimonials": [
+    "Hands-on practice in a business case",
+    "Learning to manipulate the AI to get the results that I can be proud to standby",
+    "The professor's enthusiasm was contagious! Great job. The hands-on nature of it was helpful.",
+    "Prompt Engineering",
+    "learning how AI results could be flawed and that copilot is not good.",
+    "Really Everything",
+    "Unexpected end of workshop where it was shown that there were traps in data which could be only recognized by human analysis (correlation vs causation; selection bias). It made me think a lot now!",
+    "I loved this workshop. I got so much information out of this and would like to see more workshops and or classes in the future.",
+    "Breaking down prompt into workflow",
+    "Today's workshop opens my eyes to on how different AI apps work.",
+    "The idea that AI changes tasks, not workflows.",
+    "we had lots of hands-on and learnt what went wrong and how we are going to redesign things?",
+    "A better way to use AI Gen, make sure to review your data generated, and know what exactly what you expect to achieve when asking AI a question.",
+    "The Basic overview followed by practical hands on exercises. Reviewing the discrepancies in teams. Reviewing the biases and issues.",
+    "AI has become very valuable in the sense that it improves task efficiency really quick rather than spending hours and days on projects.",
+    "Being able to interpret the AI-drafted results and witnessing the speed with which the data was handled.",
+    "The agentic AI utilization and usage",
+    "To observe how each AI model generates different outputs, within them too, the pro and premium versions can be so different from the basic versions. Another valuable aspect that I learnt was AI is just a tool to help make better decisions we should not let AI make decisions for us as the results that it produces varies vastly based on the prompts you input; thus verification of the data is key.",
+    "Note: I would have also selected the multi-week series option for question 3 What was valuable from this session was having the professor explain how and where AI provides misleading results. For example I never considered that low wages causes high turnover!",
+    "The most valuable aspect of today's workshop was seeing how AI can be used in a more structured, step-by-step workflow, rather than only through casual conversation. For many users, AI is often used for general questions or simple tasks, but this workshop demonstrated how structured prompts and intermediate reasoning steps can help AI produce more practical and work-ready outputs.",
+    "Demonstration and the coding aspect of AI and its applications"
+  ]
+}

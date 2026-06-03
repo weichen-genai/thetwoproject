@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Workshop Feedback & Preferences Survey Summary</title>
+    <meta name="description" content="Interactive slide deck summarizing MBA student feedback and future preferences for AI workshops and courses.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-main: #0B1329;
+            --card-bg: rgba(30, 41, 59, 0.45);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-main: #FFFFFF;
+            --text-muted: #94A3B8;
+            --accent-cyan: #06B6D4;
+            --accent-indigo: #6366F1;
+            --accent-green: #10B981;
+            --accent-amber: #F59E0B;
+            --card-hover: rgba(255, 255, 255, 0.05);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            background-image: radial-gradient(circle at 80% 20%, #1e1b4b 0%, #0b1329 60%, #020617 100%);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1, h2, h3, .stat-number {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 100;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-tag {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-indigo));
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .logo-title {
+            font-size: 1.1rem;
+            letter-spacing: 0.02em;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(99, 102, 241, 0.2);
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            color: #C7D2FE;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all var(--transition-speed);
+        }
+
+        .download-btn:hover {
+            background: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+        }
+
+        /* Slide Main Area */
+        .presentation-container {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 3rem 4rem 3rem;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            max-width: 1200px;
+            height: 580px;
+            opacity: 0;
+            transform: translateY(20px) scale(0.98);
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .slide.active {
+            display: grid;
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .two-cols {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .three-cols {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        /* UI Card Layouts */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            backdrop-filter: blur(16px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Slide specific styles */
+        /* Slide 1 - Title */
+        .title-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .title-left h1 {
+            font-size: 3rem;
+            line-height: 1.15;
+            background: linear-gradient(to right, #FFFFFF, #CBD5E1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .title-left p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .metadata-pill {
+            display: inline-flex;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        .title-right {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .title-stat-card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.8rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            position: relative;
+            transition: transform var(--transition-speed);
+        }
+
+        .title-stat-card:hover {
+            transform: translateX(10px);
+        }
+
+        .title-stat-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .title-stat-card.cyan::before { background: var(--accent-cyan); }
+        .title-stat-card.indigo::before { background: var(--accent-indigo); }
+
+        .stat-number {
+            font-size: 4rem;
+            line-height: 1;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .title-stat-card.cyan .stat-number { color: var(--accent-cyan); }
+        .title-stat-card.indigo .stat-number { color: var(--accent-indigo); }
+
+        .stat-label {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .stat-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .stat-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Slide Titles (For other slides) */
+        .slide-header {
+            grid-column: 1 / -1;
+            margin-bottom: 0.5rem;
+        }
+
+        .slide-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .slide-header p {
+            color: var(--accent-cyan);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* List Styling inside cards */
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.25rem;
+            color: #F8FAFC;
+        }
+
+        .card h3.cyan { color: var(--accent-cyan); }
+        .card h3.indigo { color: var(--accent-indigo); }
+        .card h3.green { color: var(--accent-green); }
+
+        .bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text-muted);
+        }
+
+        .bullet-list li::before {
+            content: "•";
+            color: var(--accent-cyan);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -0.1rem;
+        }
+
+        /* Nested Quote Cards */
+        .quote-box {
+            background: rgba(15, 23, 42, 0.4);
+            border-left: 3px solid var(--accent-indigo);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 1.5rem;
+            font-size: 0.88rem;
+            font-style: italic;
+            line-height: 1.5;
+            color: #E2E8F0;
+        }
+
+        .quote-box.cyan { border-left-color: var(--accent-cyan); }
+        .quote-box.green { border-left-color: var(--accent-green); }
+
+        /* Slide 2: Charts styling */
+        .chart-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1.5rem;
+        }
+
+        .chart-score {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+        }
+
+        .chart-container-div {
+            position: relative;
+            flex: 1;
+            min-height: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Slide 5: Grid preferences */
+        .pref-grid {
+            grid-template-rows: 1fr 1fr;
+        }
+
+        .pref-card {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+        }
+
+        .pref-pct {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+            min-width: 90px;
+            text-align: center;
+        }
+
+        .pref-pct.cyan { color: var(--accent-cyan); }
+        .pref-pct.indigo { color: var(--accent-indigo); }
+        .pref-pct.green { color: var(--accent-green); }
+        .pref-pct.white { color: #FFFFFF; }
+
+        .pref-votes {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+            display: block;
+        }
+
+        .pref-info {
+            flex: 1;
+        }
+
+        .pref-info h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+            color: #F8FAFC;
+        }
+
+        .pref-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }
+
+        .pref-progress {
+            height: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 9999px;
+            overflow: hidden;
+            margin-top: 0.75rem;
+        }
+
+        .pref-progress-fill {
+            height: 100%;
+            border-radius: 9999px;
+            width: 0;
+            transition: width 1s ease-out;
+        }
+
+        .pref-progress-fill.cyan { background: var(--accent-cyan); }
+        .pref-progress-fill.indigo { background: var(--accent-indigo); }
+        .pref-progress-fill.green { background: var(--accent-green); }
+        .pref-progress-fill.white { background: #FFFFFF; }
+
+        /* Slide 6: Student Testimonials Grid & Categories */
+        .slide6-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            width: 100%;
+        }
+
+        .category-tabs {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            padding: 0.5rem 1.1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+        }
+
+        .tab-btn:hover, .tab-btn.active {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #FFFFFF;
+        }
+
+        .tab-btn.active {
+            background: rgba(99, 102, 241, 0.2);
+            border-color: rgba(99, 102, 241, 0.5);
+            color: #C7D2FE;
+        }
+
+        .quotes-viewport {
+            flex: 1;
+            position: relative;
+            overflow-y: auto;
+            max-height: 380px;
+            padding-right: 0.5rem;
+        }
+
+        .quotes-viewport::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .quotes-viewport::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 9999px;
+        }
+
+        .quotes-viewport::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 9999px;
+        }
+
+        .quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.25rem;
+            opacity: 1;
+            transition: opacity 0.2s ease;
+        }
+
+        .testimonial-card {
+            background: rgba(30, 41, 59, 0.35);
+            border: 1px solid var(--card-border);
+            border-left: 3px solid var(--accent-indigo);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            transition: all var(--transition-speed);
+            cursor: default;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-2px);
+            background: rgba(30, 41, 59, 0.45);
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .testimonial-card.cyan { border-left-color: var(--accent-cyan); }
+        .testimonial-card.indigo { border-left-color: var(--accent-indigo); }
+        .testimonial-card.green { border-left-color: var(--accent-green); }
+        .testimonial-card.amber { border-left-color: var(--accent-amber); }
+
+        .testimonial-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #E2E8F0;
+            font-style: italic;
+        }
+
+        .testimonial-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            align-self: flex-start;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .testimonial-tag.cyan { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.1); }
+        .testimonial-tag.indigo { color: #A5B4FC; background: rgba(99, 102, 241, 0.15); }
+        .testimonial-tag.green { color: var(--accent-green); background: rgba(16, 185, 129, 0.1); }
+        .testimonial-tag.amber { color: var(--accent-amber); background: rgba(245, 158, 11, 0.1); }
+
+        /* Footer Controls */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 3rem;
+            background: rgba(11, 19, 41, 0.85);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #F8FAFC;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all var(--transition-speed);
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .slide-counter {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .progress-bar-container {
+            flex: 1;
+            max-width: 400px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 9999px;
+            overflow: hidden;
+            margin: 0 2rem;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--accent-cyan), var(--accent-indigo));
+            width: 16.66%;
+            transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .shortcuts-tip {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .shortcuts-tip kbd {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        /* Drawer Overlay */
+        .drawer-toggle {
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 0.5rem;
+            border-radius: 6px;
+            transition: background var(--transition-speed);
+        }
+
+        .drawer-toggle:hover {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .drawer {
+            position: fixed;
+            top: 0;
+            left: -320px;
+            width: 320px;
+            height: 100vh;
+            background: #0D1527;
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            z-index: 200;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+            transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .drawer.open {
+            left: 0;
+        }
+
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .drawer-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .drawer-close:hover {
+            color: #FFFFFF;
+        }
+
+        .drawer-menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .drawer-item {
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: all var(--transition-speed);
+        }
+
+        .drawer-item:hover, .drawer-item.active {
+            background: rgba(255, 255, 255, 0.05);
+            color: #FFFFFF;
+        }
+
+        .drawer-item.active {
+            background: rgba(99, 102, 241, 0.15);
+            color: #C7D2FE;
+            border-left: 3px solid var(--accent-indigo);
+            padding-left: calc(1rem - 3px);
+        }
+
+        .drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 150;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .drawer-overlay.open {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-section">
+            <button class="drawer-toggle" id="drawerOpenBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <span>Deck Index</span>
+            </button>
+            <span class="logo-tag">Survey Dashboard</span>
+            <h2 class="logo-title">MBA AI Workshop Insights</h2>
+        </div>
+        <a href="AI_Workshop_Feedback_Slides.pptx" class="download-btn" id="downloadPptx">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Download PPTX slides</span>
+        </a>
+    </header>
+
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <nav class="drawer" id="slideDrawer">
+        <div class="drawer-header">
+            <h3>Presentation Index</h3>
+            <button class="drawer-close" id="drawerCloseBtn">✕</button>
+        </div>
+        <ul class="drawer-menu">
+            <li class="drawer-item active" data-slide="1">
+                <span>01</span>
+                <span>Title & Overview</span>
+            </li>
+            <li class="drawer-item" data-slide="2">
+                <span>02</span>
+                <span>Quantitative Survey</span>
+            </li>
+            <li class="drawer-item" data-slide="3">
+                <span>03</span>
+                <span>Practice & Data Traps</span>
+            </li>
+            <li class="drawer-item" data-slide="4">
+                <span>04</span>
+                <span>Workflows & Verification</span>
+            </li>
+            <li class="drawer-item" data-slide="5">
+                <span>05</span>
+                <span>Future AI Program</span>
+            </li>
+            <li class="drawer-item" data-slide="6">
+                <span>06</span>
+                <span>Student Testimonials</span>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="presentation-container">
+        
+        <!-- SLIDE 1: TITLE & SUMMARY -->
+        <section class="slide active two-cols" id="slide-1">
+            <div class="title-left">
+                <div class="metadata-pill">
+                    <span>JUNE 2, 2026</span>
+                    <span id="meta-total-responses">N = 20 RESPONDENTS</span>
+                </div>
+                <h1>AI Workshop:<br>Feedback & Future Preferences</h1>
+                <p>An interactive, data-driven synthesis of survey responses submitted by MBA students following the Generative AI for Business case study workshop.</p>
+                <div class="metadata-pill" style="color: var(--text-muted);">
+                    <span>Navigate: Use Left/Right Arrow keys or Index</span>
+                </div>
+            </div>
+            
+            <div class="title-right">
+                <div class="title-stat-card cyan">
+                    <div class="stat-number" id="stat-recommend-pct">100%</div>
+                    <div class="stat-label">
+                        <span class="stat-title">Recommendation Rate</span>
+                        <span class="stat-desc" id="stat-recommend-desc">Every single respondent (20/20) rated their recommendation likelihood as 5/5 ("Very likely").</span>
+                    </div>
+                </div>
+                <div class="title-stat-card indigo">
+                    <div class="stat-number" id="stat-value-pct">90%</div>
+                    <div class="stat-label">
+                        <span class="stat-title">Extremely Valuable Rating</span>
+                        <span class="stat-desc" id="stat-value-desc">18 out of 20 students gave the maximum 5/5 score for professional development value. The remaining 10% rated it 4/5.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: QUANTITATIVE SURVEY -->
+        <section class="slide two-cols" id="slide-2">
+            <div class="slide-header">
+                <p>SURVEY RESULTS</p>
+                <h2>Quantitative Metrics & Ratings</h2>
+            </div>
+            
+            <div class="card chart-card">
+                <div class="chart-header">
+                    <h3>Value to Professional Development</h3>
+                    <span class="chart-score" id="value-avg-score" style="color: var(--accent-indigo);">4.9 / 5.0 Avg</span>
+                </div>
+                <div class="chart-container-div">
+                    <canvas id="valueChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card chart-card">
+                <div class="chart-header">
+                    <h3>Likelihood to Recommend</h3>
+                    <span class="chart-score" id="recommend-avg-score" style="color: var(--accent-cyan);">5.0 / 5.0 Avg</span>
+                </div>
+                <div class="chart-container-div">
+                    <canvas id="recommendChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: PRACTICE & DATA TRAPS -->
+        <section class="slide two-cols" id="slide-3">
+            <div class="slide-header">
+                <p>WORKSHOP FEEDBACK</p>
+                <h2>Hands-On Cases & Analytical "Data Traps"</h2>
+            </div>
+            
+            <div class="card">
+                <div>
+                    <h3 class="indigo">Learning Through Real Cases</h3>
+                    <ul class="bullet-list">
+                        <li><strong>Hands-on over Lecture:</strong> Students expressed strong appreciation for practical, interactive case work (the BrewPoint Coffee case study) rather than listening to passive slides.</li>
+                        <li><strong>Functional Speed:</strong> The speed with which AI models handled and structured data was impressive, demonstrating productivity gains.</li>
+                        <li><strong>Framing:</strong> Focus was placed on how to structure a business case problem so AI can help solve it.</li>
+                    </ul>
+                </div>
+                <div class="quote-box">
+                    "The Basic overview followed by practical hands on exercises. Reviewing the discrepancies in teams. Reviewing the biases and issues."
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3 class="cyan">Uncovering AI "Data Traps"</h3>
+                    <ul class="bullet-list">
+                        <li><strong>Eye-Opening Debrief:</strong> Understanding where AI models confidently output incorrect business assumptions was a primary learning.</li>
+                        <li><strong>Correlation vs. Causality:</strong> The "Staff Turnover Trap" showed that AI will recommend fixing turnover to solve revenue, failing to see that low revenue/wages actually caused the high turnover.</li>
+                        <li><strong>Human Interrogation:</strong> Reinforced that the manager's role is to stress-test the model's logic, questioning causality and selection bias.</li>
+                    </ul>
+                </div>
+                <div class="quote-box cyan">
+                    "Unexpected end of workshop where it was shown that there were traps in data which could be only recognized by human analysis... It made me think a lot now!"
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: WORKFLOWS & VERIFICATION -->
+        <section class="slide two-cols" id="slide-4">
+            <div class="slide-header">
+                <p>STRATEGIC TAKEAWAYS</p>
+                <h2>Agentic Workflows & Decision Agency</h2>
+            </div>
+            
+            <div class="card">
+                <div>
+                    <h3 class="cyan">Structured Agentic Workflows</h3>
+                    <ul class="bullet-list">
+                        <li><strong>Moving Beyond Casual Chats:</strong> Students learned that chatting with AI is a poor fit for rigorous work. Complex business problems require step-by-step agentic workflows.</li>
+                        <li><strong>Intermediate Reasoning:</strong> Breaking prompts into input, structured reasoning, testing, and feedback yields reliable, work-ready outputs.</li>
+                        <li><strong>Tasks, Not Workflows:</strong> AI automates specific analytical tasks, but the overall workflow structure remains the domain of the manager.</li>
+                    </ul>
+                </div>
+                <div class="quote-box cyan">
+                    "Seeing how AI can be used in a more structured, step-by-step workflow, rather than only through casual conversation... intermediate reasoning steps help AI produce more practical and work-ready outputs."
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3 class="green">Human Ownership & Verification</h3>
+                    <ul class="bullet-list">
+                        <li><strong>Decision Assistant, Not Maker:</strong> A key consensus from the feedback was that AI is a tool to help make choices, but humans must retain final ownership.</li>
+                        <li><strong>Model Performance Discrepancies:</strong> Observing how vastly different AI tools (Gemini, ChatGPT, Claude) and their free vs. premium models perform in practice.</li>
+                        <li><strong>Critical Review:</strong> If you cannot explain or verify the AI's data recommendations, you cannot stand by them.</li>
+                    </ul>
+                </div>
+                <div class="quote-box green">
+                    "Another valuable aspect that I learnt was AI is just a tool to help make better decisions we should not let AI make decisions for us... thus verification of the data is key."
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: FUTURE AI PROGRAM -->
+        <section class="slide" id="slide-5" style="grid-template-columns: 1fr;">
+            <div class="slide-header">
+                <p>FUTURE PREFERENCES</p>
+                <h2>Format Preferences for Expanded AI Offerings</h2>
+            </div>
+            
+            <div class="slide-header" style="margin-bottom: 0;">
+                <p style="color: var(--text-muted); font-size: 0.9rem; text-transform: none;">Students voted on how the program should expand AI training. There is a strong appetite for deeper, structured courses.</p>
+            </div>
+            
+            <div class="pref-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+                <div class="card pref-card">
+                    <div class="pref-pct cyan">
+                        <span id="pref-elective-pct">40%</span>
+                        <span class="pref-votes" id="pref-elective-votes">8 votes</span>
+                    </div>
+                    <div class="pref-info">
+                        <h4>A Full Elective Course on AI for Business</h4>
+                        <p id="pref-elective-desc">The top-ranked option. Students want a dedicated, comprehensive elective course to study advanced prompt engineering, custom agents, and AI economics in detail.</p>
+                        <div class="pref-progress">
+                            <div class="pref-progress-fill cyan" id="pref-elective-bar" style="width: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card pref-card">
+                    <div class="pref-pct indigo">
+                        <span id="pref-series-pct">20%</span>
+                        <span class="pref-votes" id="pref-series-votes">4 votes</span>
+                    </div>
+                    <div class="pref-info">
+                        <h4>Multi-Week Workshop Series (4–6 sessions)</h4>
+                        <p id="pref-series-desc">Students appreciate the workshop format but want sequential sessions. Note: One additional student noted in comments that they would have selected this format.</p>
+                        <div class="pref-progress">
+                            <div class="pref-progress-fill indigo" id="pref-series-bar" style="width: 20%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card pref-card">
+                    <div class="pref-pct green">
+                        <span id="pref-embedded-pct">20%</span>
+                        <span class="pref-votes" id="pref-embedded-votes">4 votes</span>
+                    </div>
+                    <div class="pref-info">
+                        <h4>Short Embedded Sessions in Core Classes</h4>
+                        <p id="pref-embedded-desc">Integrating 1–2 hour specialized AI sessions directly into existing finance, supply chain, or strategy courses to provide context-specific tool learning.</p>
+                        <div class="pref-progress">
+                            <div class="pref-progress-fill green" id="pref-embedded-bar" style="width: 20%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card pref-card">
+                    <div class="pref-pct white">
+                        <span id="pref-standalone-pct">20%</span>
+                        <span class="pref-votes" id="pref-standalone-votes">4 votes</span>
+                    </div>
+                    <div class="pref-info">
+                        <h4>Standalone Semiannual Workshops</h4>
+                        <p id="pref-standalone-desc">Continuing the current standalone format (like today's session) offered once or twice per semester as optional extracurricular sessions.</p>
+                        <div class="pref-progress">
+                            <div class="pref-progress-fill white" id="pref-standalone-bar" style="width: 20%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: STUDENT TESTIMONIALS -->
+        <section class="slide" id="slide-6" style="grid-template-columns: 1fr;">
+            <div class="slide-header">
+                <p>QUALITATIVE FEEDBACK</p>
+                <h2>Voices from the Classroom</h2>
+            </div>
+            
+            <div class="slide6-container">
+                <div class="category-tabs" id="tabContainer">
+                    <button class="tab-btn active" id="tab-btn-all" data-filter="all">All Feedback (20)</button>
+                    <button class="tab-btn" data-filter="hands-on">Hands-on & Cases</button>
+                    <button class="tab-btn" data-filter="traps">Data Traps & Causality</button>
+                    <button class="tab-btn" data-filter="workflows">Workflows & Verification</button>
+                </div>
+                
+                <div class="quotes-viewport">
+                    <div class="quotes-grid" id="quotesGrid">
+                        <!-- Dynamic quote cards will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="nav-controls">
+            <button class="nav-btn" id="prevBtn" disabled>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <span class="slide-counter" id="slideCounter">1 / 6</span>
+            <button class="nav-btn" id="nextBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="progressBar"></div>
+        </div>
+
+        <div class="shortcuts-tip">
+            <span>Shortcuts: <kbd>→</kbd> / <kbd>Space</kbd> Next</span>
+            <span><kbd>←</kbd> Prev</span>
+        </div>
+    </footer>
+
+    <script>
+        // Survey JSON Data Inlined
+        const surveyData = {
+  "total_responses": 21,
+  "metrics": {
+    "value_avg": 4.9,
+    "value_distribution": {
+      "5 - Extremely Valuable": 19,
+      "4 - Valuable": 2,
+      "1 - 3 - Neutral/Low": 0
+    },
+    "recommend_avg": 5.0,
+    "recommend_distribution": {
+      "5 - Very Likely": 21,
+      "1 - 4 - Other": 0
+    }
+  },
+  "preferences": {
+    "Full Elective Course": 8,
+    "Multi-Week Workshop Series": 4,
+    "Short Embedded Session": 4,
+    "Standalone Semester Workshop": 5
+  },
+  "testimonials": [
+    "Hands-on practice in a business case",
+    "Learning to manipulate the AI to get the results that I can be proud to standby",
+    "The professor's enthusiasm was contagious! Great job. The hands-on nature of it was helpful.",
+    "Prompt Engineering",
+    "learning how AI results could be flawed and that copilot is not good.",
+    "Really Everything",
+    "Unexpected end of workshop where it was shown that there were traps in data which could be only recognized by human analysis (correlation vs causation; selection bias). It made me think a lot now!",
+    "I loved this workshop. I got so much information out of this and would like to see more workshops and or classes in the future.",
+    "Breaking down prompt into workflow",
+    "Today's workshop opens my eyes to on how different AI apps work.",
+    "The idea that AI changes tasks, not workflows.",
+    "we had lots of hands-on and learnt what went wrong and how we are going to redesign things?",
+    "A better way to use AI Gen, make sure to review your data generated, and know what exactly what you expect to achieve when asking AI a question.",
+    "The Basic overview followed by practical hands on exercises. Reviewing the discrepancies in teams. Reviewing the biases and issues.",
+    "AI has become very valuable in the sense that it improves task efficiency really quick rather than spending hours and days on projects.",
+    "Being able to interpret the AI-drafted results and witnessing the speed with which the data was handled.",
+    "The agentic AI utilization and usage",
+    "To observe how each AI model generates different outputs, within them too, the pro and premium versions can be so different from the basic versions. Another valuable aspect that I learnt was AI is just a tool to help make better decisions we should not let AI make decisions for us as the results that it produces varies vastly based on the prompts you input; thus verification of the data is key.",
+    "Note: I would have also selected the multi-week series option for question 3 What was valuable from this session was having the professor explain how and where AI provides misleading results. For example I never considered that low wages causes high turnover!",
+    "The most valuable aspect of today's workshop was seeing how AI can be used in a more structured, step-by-step workflow, rather than only through casual conversation. For many users, AI is often used for general questions or simple tasks, but this workshop demonstrated how structured prompts and intermediate reasoning steps can help AI produce more practical and work-ready outputs.",
+    "Demonstration and the coding aspect of AI and its applications"
+  ]
+};
+
+        // Categorize quotes dynamically based on keyword search
+        function getQuotesByCategory(filter) {
+            const list = surveyData.testimonials;
+            if (filter === 'all') {
+                return list.map(q => ({ text: q, category: classifyQuote(q) }));
+            }
+            
+            return list
+                .map(q => ({ text: q, category: classifyQuote(q) }))
+                .filter(q => q.category === filter);
+        }
+
+        function classifyQuote(quote) {
+            const q = quote.toLowerCase();
+            if (q.includes("trap") || q.includes("causation") || q.includes("causality") || q.includes("bias") || q.includes("flaw") || q.includes("mislead") || q.includes("turnover") || q.includes("wages") || q.includes("copilot")) {
+                return "traps";
+            }
+            if (q.includes("workflow") || q.includes("step-by-step") || q.includes("prompt") || q.includes("intermediate") || q.includes("structure") || q.includes("agentic") || q.includes("verify") || q.includes("verification") || q.includes("different version") || q.includes("premium")) {
+                return "workflows";
+            }
+            if (q.includes("hands-on") || q.includes("case") || q.includes("practice") || q.includes("practical") || q.includes("exercise")) {
+                return "hands-on";
+            }
+            return "all"; // general appreciation
+        }
+
+        // Render quotes
+        function renderQuotes(filter) {
+            const grid = document.getElementById('quotesGrid');
+            grid.style.opacity = 0;
+            
+            setTimeout(() => {
+                grid.innerHTML = '';
+                const quotes = getQuotesByCategory(filter);
+                
+                if (quotes.length === 0) {
+                    grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 3rem;">No quotes matching this filter.</div>';
+                    grid.style.opacity = 1;
+                    return;
+                }
+                
+                quotes.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = `testimonial-card ${item.category !== 'all' ? item.category : 'amber'}`;
+                    
+                    let catName = 'General Appreciation';
+                    let catClass = 'amber';
+                    if (item.category === 'hands-on') { catName = 'Hands-on & Cases'; catClass = 'cyan'; }
+                    else if (item.category === 'traps') { catName = 'Data Traps'; catClass = 'indigo'; }
+                    else if (item.category === 'workflows') { catName = 'Workflows'; catClass = 'green'; }
+                    
+                    card.innerHTML = `
+                        <p class="testimonial-text">"${item.text}"</p>
+                        <span class="testimonial-tag ${catClass}">${catName}</span>
+                    `;
+                    grid.appendChild(card);
+                });
+                grid.style.opacity = 1;
+            }, 200);
+        }
+
+        // Slide State Management
+        let currentSlide = 1;
+        const totalSlides = 6;
+        let valueChartInstance = null;
+        let recommendChartInstance = null;
+
+        function updateSlide(slideNum) {
+            // Bounds check
+            if (slideNum < 1 || slideNum > totalSlides) return;
+            
+            // Deactivate current slide
+            document.querySelector(`.slide.active`).classList.remove('active');
+            
+            // Activate new slide
+            currentSlide = slideNum;
+            const targetSlide = document.getElementById(`slide-${currentSlide}`);
+            targetSlide.classList.add('active');
+            
+            // Update counter and progress bar
+            document.getElementById('slideCounter').innerText = `${currentSlide} / ${totalSlides}`;
+            document.getElementById('progressBar').style.width = `${(currentSlide / totalSlides) * 100}%`;
+            
+            // Update buttons
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+
+            // Drawer highlights
+            document.querySelectorAll('.drawer-item').forEach(item => {
+                if (parseInt(item.getAttribute('data-slide')) === currentSlide) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Trigger animations & charts specific to slides
+            if (currentSlide === 2) {
+                initSlide2Charts();
+            } else if (currentSlide === 5) {
+                // Animate progress bars on slide 5
+                setTimeout(() => {
+                    document.querySelectorAll('.pref-progress-fill').forEach(fill => {
+                        // Triggers transition width
+                    });
+                }, 100);
+            } else if (currentSlide === 6) {
+                renderQuotes('all');
+            }
+        }
+
+        // Initialize Charts on Slide 2
+        function initSlide2Charts() {
+            const chartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#94A3B8',
+                            font: { family: 'Inter', size: 11 }
+                        }
+                    }
+                }
+            };
+
+            // 1. Value Chart
+            if (!valueChartInstance) {
+                const ctxVal = document.getElementById('valueChart').getContext('2d');
+                valueChartInstance = new Chart(ctxVal, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['5 - Extremely Valuable', '4 - Valuable', '1-3 - Neutral/Low'],
+                        datasets: [{
+                            data: [
+                                surveyData.metrics.value_distribution["5 - Extremely Valuable"],
+                                surveyData.metrics.value_distribution["4 - Valuable"],
+                                surveyData.metrics.value_distribution["1 - 3 - Neutral/Low"]
+                            ],
+                            backgroundColor: ['#6366F1', '#06B6D4', '#475569'],
+                            borderColor: '#1E293B',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: chartOptions
+                });
+            } else {
+                valueChartInstance.data.datasets[0].data = [
+                    surveyData.metrics.value_distribution["5 - Extremely Valuable"],
+                    surveyData.metrics.value_distribution["4 - Valuable"],
+                    surveyData.metrics.value_distribution["1 - 3 - Neutral/Low"]
+                ];
+                valueChartInstance.update();
+            }
+
+            // 2. Recommend Chart
+            if (!recommendChartInstance) {
+                const ctxRec = document.getElementById('recommendChart').getContext('2d');
+                recommendChartInstance = new Chart(ctxRec, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['5 - Very Likely', '1-4 - Other'],
+                        datasets: [{
+                            data: [
+                                surveyData.metrics.recommend_distribution["5 - Very Likely"],
+                                surveyData.metrics.recommend_distribution["1 - 4 - Other"]
+                            ],
+                            backgroundColor: ['#06B6D4', '#475569'],
+                            borderColor: '#1E293B',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: chartOptions
+                });
+            } else {
+                recommendChartInstance.data.datasets[0].data = [
+                    surveyData.metrics.recommend_distribution["5 - Very Likely"],
+                    surveyData.metrics.recommend_distribution["1 - 4 - Other"]
+                ];
+                recommendChartInstance.update();
+            }
+        }
+
+        // Navigation Bindings
+        document.getElementById('prevBtn').addEventListener('click', () => updateSlide(currentSlide - 1));
+        document.getElementById('nextBtn').addEventListener('click', () => updateSlide(currentSlide + 1));
+
+        // Keyboard listeners
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                updateSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                updateSlide(currentSlide - 1);
+            }
+        });
+
+        // Drawer Bindings
+        const drawer = document.getElementById('slideDrawer');
+        const overlay = document.getElementById('drawerOverlay');
+        
+        function openDrawer() {
+            drawer.classList.add('open');
+            overlay.classList.add('open');
+        }
+
+        function closeDrawer() {
+            drawer.classList.remove('open');
+            overlay.classList.remove('open');
+        }
+
+        document.getElementById('drawerOpenBtn').addEventListener('click', openDrawer);
+        document.getElementById('drawerCloseBtn').addEventListener('click', closeDrawer);
+        overlay.addEventListener('click', closeDrawer);
+
+        document.querySelectorAll('.drawer-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const slideNum = parseInt(item.getAttribute('data-slide'));
+                updateSlide(slideNum);
+                closeDrawer();
+            });
+        });
+
+        // Tab filter bindings for Slide 6
+        document.getElementById('tabContainer').addEventListener('click', (e) => {
+            if (e.target.classList.contains('tab-btn')) {
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+                const filter = e.target.getAttribute('data-filter');
+                renderQuotes(filter);
+            }
+        });
+
+        // Initialize all dynamic elements on load
+        function initializeDynamicElements() {
+            const total = surveyData.total_responses;
+            document.getElementById('meta-total-responses').innerText = `N = ${total} RESPONDENTS`;
+            document.getElementById('tab-btn-all').innerText = `All Feedback (${total})`;
+            
+            // Value distribution
+            const valExt = surveyData.metrics.value_distribution["5 - Extremely Valuable"] || 0;
+            const valMod = surveyData.metrics.value_distribution["4 - Valuable"] || 0;
+            const valExtPct = Math.round((valExt / total) * 100);
+            const valModPct = Math.round((valMod / total) * 100);
+            
+            document.getElementById('stat-value-pct').innerText = `${valExtPct}%`;
+            document.getElementById('stat-value-desc').innerText = `${valExt} out of ${total} students gave the maximum 5/5 score for professional development value. The remaining ${valModPct}% rated it 4/5.`;
+            document.getElementById('value-avg-score').innerText = `${surveyData.metrics.value_avg} / 5.0 Avg`;
+            
+            // Recommendation distribution
+            const recVery = surveyData.metrics.recommend_distribution["5 - Very Likely"] || 0;
+            const recVeryPct = Math.round((recVery / total) * 100);
+            
+            document.getElementById('stat-recommend-pct').innerText = `${recVeryPct}%`;
+            document.getElementById('stat-recommend-desc').innerText = `Every single respondent (${recVery}/${total}) rated their recommendation likelihood as 5/5 ("Very likely").`;
+            document.getElementById('recommend-avg-score').innerText = `${surveyData.metrics.recommend_avg} / 5.0 Avg`;
+            
+            // Format preferences
+            const prefElective = surveyData.preferences["Full Elective Course"] || 0;
+            const prefSeries = surveyData.preferences["Multi-Week Workshop Series"] || 0;
+            const prefEmbedded = surveyData.preferences["Short Embedded Session"] || 0;
+            const prefStandalone = surveyData.preferences["Standalone Semester Workshop"] || 0;
+            
+            const pctElective = Math.round((prefElective / total) * 100);
+            const pctSeries = Math.round((prefSeries / total) * 100);
+            const pctEmbedded = Math.round((prefEmbedded / total) * 100);
+            const pctStandalone = Math.round((prefStandalone / total) * 100);
+            
+            document.getElementById('pref-elective-pct').innerText = `${pctElective}%`;
+            document.getElementById('pref-elective-votes').innerText = `${prefElective} votes`;
+            document.getElementById('pref-elective-bar').style.width = `${pctElective}%`;
+            
+            document.getElementById('pref-series-pct').innerText = `${pctSeries}%`;
+            document.getElementById('pref-series-votes').innerText = `${prefSeries} votes`;
+            document.getElementById('pref-series-bar').style.width = `${pctSeries}%`;
+            
+            document.getElementById('pref-embedded-pct').innerText = `${pctEmbedded}%`;
+            document.getElementById('pref-embedded-votes').innerText = `${prefEmbedded} votes`;
+            document.getElementById('pref-embedded-bar').style.width = `${pctEmbedded}%`;
+            
+            document.getElementById('pref-standalone-pct').innerText = `${pctStandalone}%`;
+            document.getElementById('pref-standalone-votes').innerText = `${prefStandalone} votes`;
+            document.getElementById('pref-standalone-bar').style.width = `${pctStandalone}%`;
+        }
+
+        // Initialize First Slide
+        initializeDynamicElements();
+        updateSlide(1);
+    </script>
+</body>
+</html>
