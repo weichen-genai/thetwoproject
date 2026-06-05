@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Workshop Feedback & Preferences Survey Summary</title>
     <meta name="description" content="Interactive slide deck summarizing MBA student feedback and future preferences for AI workshops and courses.">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9XBXGC7R7V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-9XBXGC7R7V');
+    </script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -728,6 +737,95 @@
         .drawer-overlay.open {
             display: block;
             opacity: 1;
+        }
+
+        @media (max-width: 860px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 1.25rem;
+                align-items: center;
+                text-align: center;
+            }
+            .logo-section {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+            }
+            .download-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .presentation-container {
+                padding: 1rem 1rem 6rem 1rem;
+            }
+            .slide {
+                height: auto;
+                gap: 1.5rem;
+            }
+            .two-cols,
+            .three-cols,
+            .pref-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .pref-grid {
+                grid-template-rows: auto;
+            }
+            .pref-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem 1rem;
+            }
+            .pref-pct {
+                min-width: auto;
+            }
+            .title-left h1 {
+                font-size: 2.2rem;
+            }
+            .slide-header h2 {
+                font-size: 1.6rem;
+            }
+            .card {
+                padding: 1.5rem;
+            }
+            .title-stat-card {
+                padding: 1.25rem 1.5rem;
+                gap: 1.25rem;
+                flex-direction: column;
+                text-align: center;
+            }
+            .title-stat-card:hover {
+                transform: none;
+            }
+            .stat-number {
+                font-size: 3.2rem;
+            }
+            .category-tabs {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                justify-content: center;
+            }
+            .tab-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.78rem;
+            }
+            .quotes-viewport {
+                max-height: 300px;
+            }
+            .testimonial-card {
+                padding: 1.25rem;
+            }
+            footer {
+                padding: 0.75rem 1rem;
+                gap: 1rem;
+            }
+            .progress-bar-container {
+                margin: 0;
+                flex: 1;
+            }
+            .shortcuts-tip {
+                display: none;
+            }
         }
     </style>
 </head>

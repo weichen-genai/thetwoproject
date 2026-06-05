@@ -38,6 +38,7 @@
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -1851,6 +1852,7 @@ em {
   border-radius: var(--radius);
   box-shadow: 0 4px 12px rgba(31, 31, 26, 0.02), inset 0 1px 0 rgba(255, 255, 255, 0.6);
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  scroll-margin-top: 2rem;
 }
 
 .timeline-card:hover {
@@ -1920,6 +1922,29 @@ em {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
+}
+
+.timeline-feedback-quote {
+  margin: 0;
+  padding: 0 0 0 1rem;
+  border-left: 2px solid var(--accent);
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.timeline-feedback-quote cite {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-deep);
 }
 
 .timeline-format-tag {
