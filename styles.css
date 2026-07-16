@@ -1322,6 +1322,442 @@ em {
   border-color: var(--accent);
 }
 
+/* The Owner signup */
+.owner-signup-section {
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-5);
+  background: rgba(251, 249, 244, 0.42);
+}
+
+.owner-signup-band {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.7fr) minmax(0, 1.3fr);
+  align-items: end;
+  gap: var(--space-5);
+}
+
+.owner-signup-band-copy h2 {
+  margin-bottom: var(--space-2);
+}
+
+.owner-signup-band-copy p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.owner-signup-form {
+  width: 100%;
+  margin: 0;
+  color: var(--text);
+}
+
+.owner-signup-band-form {
+  max-width: none;
+}
+
+.owner-signup-band-fields,
+.owner-signup-fields {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.owner-signup-band-fields {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.15fr) auto;
+  align-items: end;
+}
+
+.owner-signup-field {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+}
+
+.owner-signup-field span {
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.owner-signup-field .formkit-input {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.68rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) - 0.2rem);
+  background: #fffdf9;
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  line-height: 1.3;
+  transition: border-color var(--transition), box-shadow var(--transition), background-color var(--transition);
+  -webkit-appearance: none;
+}
+
+.owner-signup-field .formkit-input::placeholder {
+  color: var(--muted);
+  opacity: 0.7;
+}
+
+.owner-signup-field .formkit-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(102, 113, 91, 0.13);
+  outline: none;
+}
+
+.owner-signup-submit {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 2.75rem;
+  padding: 0.72rem 1.05rem;
+  border: 1px solid var(--accent-deep);
+  border-radius: 999px;
+  background: var(--accent-deep);
+  color: #fff;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: background-color var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.owner-signup-submit:hover,
+.owner-signup-submit:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.owner-signup-submit .formkit-spinner {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.owner-signup-submit .formkit-spinner span {
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.45;
+  animation: owner-signup-pulse 1s ease-in-out infinite;
+}
+
+.owner-signup-submit .formkit-spinner span:nth-child(2) {
+  animation-delay: 120ms;
+}
+
+.owner-signup-submit .formkit-spinner span:nth-child(3) {
+  animation-delay: 240ms;
+}
+
+.owner-signup-submit[data-active] .formkit-spinner {
+  display: flex;
+}
+
+.owner-signup-submit[data-active] > span:last-child {
+  opacity: 0;
+}
+
+@keyframes owner-signup-pulse {
+  0%,
+  100% {
+    transform: scale(0.78);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+.owner-signup-disclaimer {
+  margin-top: var(--space-3);
+  margin-bottom: 0;
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.owner-signup-form .formkit-alert {
+  margin: 0 0 var(--space-3);
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) - 0.2rem);
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  list-style: none;
+}
+
+.owner-signup-form .formkit-alert:empty {
+  display: none;
+}
+
+.owner-signup-form .formkit-alert-error {
+  border-color: rgba(138, 84, 66, 0.42);
+  background: rgba(245, 231, 216, 0.72);
+  color: #6a3528;
+}
+
+.owner-signup-form .formkit-alert-success {
+  border-color: rgba(102, 113, 91, 0.42);
+  background: rgba(102, 113, 91, 0.1);
+  color: var(--accent-deep);
+}
+
+.owner-signup-widget {
+  position: relative;
+  z-index: 90;
+  --signup-compact-left: calc(100vw - 15rem);
+  --signup-compact-top: calc(100vh - 5rem);
+  --signup-compact-width: 14rem;
+  --signup-floating-left: calc(100vw - 29rem);
+  --signup-floating-top: 1.5rem;
+  --signup-floating-width: 28rem;
+  --signup-floating-max-height: calc(100vh - 3rem);
+}
+
+.owner-signup-shell {
+  position: fixed;
+  top: var(--signup-compact-top);
+  left: var(--signup-compact-left);
+  z-index: 90;
+  width: var(--signup-compact-width);
+  max-width: calc(100vw - 1.5rem);
+  overflow: hidden;
+  border: 1px solid rgba(79, 89, 69, 0.78);
+  border-radius: 999px;
+  background: rgba(79, 89, 69, 0.96);
+  box-shadow: 0 0.8rem 2rem rgba(31, 31, 26, 0.16);
+  color: #fff;
+  opacity: 1;
+  transition:
+    top 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    left 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    width 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 220ms ease,
+    border-radius 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 220ms ease,
+    box-shadow 220ms ease,
+    color 220ms ease,
+    opacity 160ms ease;
+}
+
+.owner-signup-widget:not(.is-ready) .owner-signup-shell {
+  opacity: 0;
+}
+
+.owner-signup-widget.is-floating-expanded .owner-signup-shell {
+  top: var(--signup-floating-top);
+  left: var(--signup-floating-left);
+  width: var(--signup-floating-width);
+  max-height: var(--signup-floating-max-height);
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-color: rgba(217, 211, 198, 0.94);
+  border-radius: 1rem;
+  background: var(--surface);
+  box-shadow: 0 1.2rem 3rem rgba(31, 31, 26, 0.2);
+  color: var(--text);
+}
+
+.owner-signup-compact {
+  display: grid;
+  width: 100%;
+  gap: 0.12rem;
+  padding: 0.78rem 1rem 0.82rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  line-height: 1.15;
+  text-align: left;
+  transition: max-height 240ms ease, opacity 160ms ease, padding 240ms ease, transform var(--transition);
+}
+
+.owner-signup-widget.is-floating-expanded .owner-signup-compact {
+  max-height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.owner-signup-compact:hover,
+.owner-signup-compact:focus-visible {
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.owner-signup-compact-kicker {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.owner-signup-compact-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.owner-signup-collapse {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.15rem;
+  height: 2.15rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(251, 249, 244, 0.9);
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: border-color var(--transition), color var(--transition), background-color var(--transition), opacity var(--transition);
+}
+
+.owner-signup-widget.is-floating-expanded .owner-signup-collapse {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.owner-signup-collapse:hover,
+.owner-signup-collapse:focus-visible {
+  border-color: var(--accent);
+  background: var(--surface-strong);
+  color: var(--text);
+  outline: none;
+}
+
+.owner-signup-widget .owner-signup-form {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: max-height 260ms ease, opacity 160ms ease;
+}
+
+.owner-signup-widget.is-floating-expanded .owner-signup-form {
+  max-height: 48rem;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.owner-signup-form-inner {
+  padding: 1.35rem 3.5rem 1.4rem 1.45rem;
+}
+
+.owner-signup-eyebrow {
+  margin-bottom: 0.65rem;
+  color: var(--accent-deep);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.owner-signup-header h2 {
+  margin-bottom: 0.65rem;
+  color: var(--text);
+  font-size: 1.38rem;
+  letter-spacing: 0;
+  line-height: 1.14;
+}
+
+.owner-signup-copy p {
+  margin-bottom: var(--space-3);
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.owner-signup-form .formkit-powered-by-convertkit-container {
+  margin-top: var(--space-3);
+}
+
+.owner-signup-form .formkit-powered-by-convertkit {
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  opacity: 0.72;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.owner-signup-form .formkit-powered-by-convertkit:hover,
+.owner-signup-form .formkit-powered-by-convertkit:focus-visible {
+  color: var(--accent-deep);
+  opacity: 1;
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .owner-signup-shell,
+  .owner-signup-form,
+  .owner-signup-compact {
+    transition: none;
+  }
+}
+
+@media (max-width: 980px) {
+  .owner-signup-band {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .owner-signup-band-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .owner-signup-band-fields .owner-signup-submit {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .owner-signup-band-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .owner-signup-submit {
+    width: 100%;
+  }
+
+  .owner-signup-form-inner {
+    padding: 1.35rem;
+    padding-top: 1.45rem;
+    padding-right: 3.25rem;
+  }
+
+  .owner-signup-compact {
+    padding: 0.72rem 0.9rem 0.76rem;
+  }
+}
+
 /* Team grid */
 .team-grid {
   display: grid;
