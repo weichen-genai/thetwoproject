@@ -80,14 +80,26 @@
       }
     }
 
-    compact.addEventListener('click', function () {
-      if (!widget.classList.contains('is-collapsed')) return;
+    function expandWidget() {
       manuallyExpanded = true;
       updateWidgetState();
       window.setTimeout(function () {
         var email = widget.querySelector('input[name="email_address"]');
         if (email) email.focus();
       }, 220);
+    }
+
+    compact.addEventListener('click', function () {
+      if (!widget.classList.contains('is-collapsed')) return;
+      expandWidget();
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!event.target.closest) return;
+      var openControl = event.target.closest('[data-owner-signup-open]');
+      if (!openControl) return;
+      event.preventDefault();
+      expandWidget();
     });
 
     collapseControl.addEventListener('click', function () {
