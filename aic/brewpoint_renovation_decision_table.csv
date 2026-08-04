@@ -1,0 +1,76 @@
+store_id,city,neighborhood_type,renovated_last_6mo,renovation_completed_date,pre_6mo_avg_revenue_usd,recent_3mo_avg_revenue_usd,pre_period_monthly_trend_pct,facility_condition_score_1_10,quoted_renovation_cost_usd,estimated_closure_days,foot_traffic_score,current_monthly_revenue_usd,customer_nps,avg_wait_time_minutes
+S001,Lakeside,Suburban,False,,24571,24902,0.84,9.1,254000,15,5.8,24397,33,7.9
+S002,Lakeside,Shopping Mall,False,,17013,17350,0.99,6.8,178000,14,6.3,17152,27,6.0
+S003,Metro City,Transit Hub,True,2026-03-01,29913,31974,1.1,6.0,176000,13,6.7,31647,18,5.8
+S004,Riverside,University,False,,22935,22259,1.11,5.4,175000,12,7.6,21915,47,8.2
+S005,Metro City,Downtown,False,,26511,27802,0.75,7.6,215000,14,8.1,27587,28,5.1
+S006,Lakeside,Downtown,True,2026-03-01,34393,38203,1.27,9.3,233000,17,9.0,37668,-2,7.4
+S007,Northgate,Downtown,False,,31216,32144,1.23,9.4,262000,18,7.8,31865,41,5.7
+S008,Riverside,Transit Hub,False,,33014,33094,0.85,7.9,206000,14,6.8,32728,22,6.1
+S009,Metro City,University,False,,15517,16442,1.32,8.9,243000,13,6.4,16252,18,3.7
+S010,Riverside,University,False,,19600,19698,0.95,8.4,218000,16,4.6,19387,11,4.8
+S011,Riverside,Downtown,False,,35086,34323,1.33,7.6,225000,16,7.4,33657,40,3.4
+S012,Lakeside,Shopping Mall,False,,24048,23361,0.83,9.1,227000,18,5.8,22969,21,5.4
+S013,Northgate,Transit Hub,False,,23152,23841,1.05,8.7,233000,17,5.7,23861,46,6.1
+S014,Eastport,Downtown,False,,27812,28110,1.27,7.0,213000,15,7.2,28215,56,3.8
+S015,Riverside,Downtown,True,2026-03-01,35834,39014,1.32,7.5,213000,15,8.5,38678,1,8.6
+S016,Metro City,Downtown,False,,28312,27898,0.93,8.1,228000,17,6.5,27927,23,5.9
+S017,Lakeside,Suburban,False,,14607,15275,1.0,7.8,214000,16,4.0,14996,5,5.6
+S018,Lakeside,University,True,2026-03-01,21211,23888,1.24,9.0,229000,18,7.6,23765,5,6.7
+S019,Northgate,Suburban,False,,22546,22279,1.15,8.3,243000,15,5.6,22042,50,4.3
+S020,Lakeside,Suburban,False,,32036,31415,0.69,9.7,250000,19,8.1,31009,9,5.7
+S021,Riverside,University,False,,19093,19647,0.86,9.7,254000,18,5.2,19634,23,4.4
+S022,Northgate,Downtown,False,,30040,30697,0.85,7.7,214000,14,7.9,30485,9,7.8
+S023,Riverside,Suburban,True,2026-03-01,16686,18020,0.98,9.7,268000,20,5.3,17656,29,3.9
+S024,Metro City,Suburban,False,,24165,23752,0.68,7.4,194000,13,5.1,23582,6,5.6
+S025,Metro City,Suburban,False,,27305,28726,0.87,9.7,256000,18,5.9,28690,27,6.0
+S026,Metro City,Transit Hub,True,2026-03-01,25051,28043,1.3,9.0,242000,16,7.0,27935,10,6.1
+S027,Northgate,Downtown,True,2026-03-01,31980,34689,1.57,6.8,197000,13,5.3,34369,41,4.6
+S028,Riverside,Suburban,False,,14303,13926,0.59,8.5,230000,17,4.2,13723,33,4.2
+S029,Riverside,University,False,,22778,23346,0.92,8.7,245000,17,7.9,23059,23,4.6
+S030,Eastport,Downtown,False,,37233,37906,0.95,9.6,243000,19,8.4,37321,14,6.3
+S031,Metro City,University,False,,16053,16093,1.01,5.9,180000,13,6.1,16061,48,5.3
+S032,Riverside,Downtown,True,2026-03-01,36971,39335,0.68,5.9,183000,13,7.7,39031,34,6.7
+S033,Lakeside,Downtown,True,2026-03-01,36686,41460,0.42,9.7,241000,20,10.0,41051,7,6.2
+S034,Metro City,Shopping Mall,False,,17680,18175,1.45,8.5,211000,17,5.8,18228,17,2.1
+S035,Metro City,Shopping Mall,True,2026-03-01,13697,15126,1.31,6.9,195000,13,5.8,15062,45,5.9
+S036,Metro City,Transit Hub,False,,25775,25548,0.93,9.7,264000,19,7.2,25211,9,8.9
+S037,Metro City,Suburban,False,,23571,24344,0.47,9.0,246000,18,5.6,24576,16,7.5
+S038,Eastport,Downtown,False,,22908,23253,0.67,6.9,206000,15,6.9,22795,42,6.1
+S039,Lakeside,University,False,,26995,26990,1.1,6.0,191000,13,7.1,26658,27,3.9
+S040,Northgate,Suburban,False,,11949,11735,0.91,8.7,255000,18,3.1,11635,31,6.2
+S041,Lakeside,Downtown,False,,36599,37684,0.72,9.2,245000,17,7.5,37633,9,6.6
+S042,Lakeside,Suburban,False,,15967,16374,1.17,8.2,230000,15,5.1,16409,20,5.1
+S043,Metro City,Downtown,False,,33115,33440,1.05,9.2,254000,18,7.0,33250,26,6.0
+S044,Eastport,Shopping Mall,False,,17852,17941,0.78,8.5,216000,16,5.3,17893,18,7.8
+S045,Northgate,Suburban,False,,17931,18928,1.34,8.2,226000,16,4.4,18782,24,4.2
+S046,Lakeside,University,False,,19853,20155,0.93,7.7,204000,17,5.7,19783,19,3.9
+S047,Eastport,Suburban,False,,16976,16921,0.84,9.7,241000,19,2.7,16675,6,6.5
+S048,Riverside,University,False,,24546,23968,0.82,9.7,248000,19,6.2,23504,10,6.2
+S049,Metro City,University,False,,17372,18067,0.9,4.9,152000,11,7.6,18024,52,7.0
+S050,Metro City,Downtown,False,,31346,31907,1.19,6.8,198000,13,6.9,31496,21,6.4
+S051,Riverside,Shopping Mall,False,,26012,25976,1.32,9.7,258000,18,6.4,25871,17,4.6
+S052,Lakeside,Transit Hub,False,,27151,27176,0.99,8.0,227000,15,5.9,26924,36,6.1
+S053,Lakeside,Shopping Mall,False,,19231,20336,1.01,9.3,254000,20,4.5,20269,38,3.8
+S054,Metro City,Shopping Mall,False,,15013,15531,1.65,8.6,220000,15,5.0,15334,23,5.1
+S055,Riverside,University,False,,16978,16647,0.78,7.8,208000,17,5.5,16432,13,6.3
+S056,Riverside,Shopping Mall,False,,19935,19450,0.79,6.5,188000,13,4.6,19256,35,5.0
+S057,Metro City,Downtown,True,2026-03-01,31282,34934,0.49,9.6,254000,17,7.6,34496,25,9.2
+S058,Metro City,Downtown,False,,34968,35788,1.29,7.3,212000,13,9.0,35432,33,2.7
+S059,Riverside,Downtown,False,,29105,29090,0.86,9.7,260000,16,6.5,28314,20,4.7
+S060,Eastport,Suburban,False,,11623,11431,0.71,6.8,194000,14,3.3,11303,33,4.1
+S061,Riverside,Suburban,False,,16590,17336,0.77,8.1,214000,16,5.7,17305,10,4.4
+S062,Riverside,Suburban,False,,18617,19059,1.63,9.3,243000,17,3.6,18870,44,4.5
+S063,Lakeside,Transit Hub,True,2026-03-01,24777,27337,1.08,9.5,256000,17,5.8,27172,38,3.5
+S064,Riverside,Suburban,False,,20110,19631,0.2,6.9,197000,15,5.5,19400,50,6.6
+S065,Eastport,Suburban,True,2026-03-01,17405,19348,0.55,9.6,263000,16,4.8,19340,32,4.7
+S066,Eastport,University,False,,20883,21242,1.23,6.9,198000,13,5.8,20758,17,5.7
+S067,Metro City,Downtown,False,,29678,29679,1.32,6.3,172000,14,7.3,29400,31,4.8
+S068,Riverside,Transit Hub,False,,29022,28721,0.87,8.5,234000,19,6.6,28202,25,4.5
+S069,Riverside,Downtown,False,,35485,37015,1.02,7.1,207000,14,9.1,36789,25,8.0
+S070,Metro City,Shopping Mall,False,,16731,17086,1.21,8.4,242000,16,5.1,16939,25,6.9
+S071,Metro City,Transit Hub,False,,23130,23294,1.72,7.2,207000,16,6.1,23261,35,2.7
+S072,Northgate,Downtown,False,,26363,26469,1.19,7.5,217000,17,6.7,26272,40,2.5
+S073,Riverside,Downtown,False,,32239,32595,0.47,5.8,168000,13,6.8,32258,32,7.1
+S074,Metro City,Transit Hub,False,,35918,36218,0.91,9.4,262000,17,7.6,35860,31,4.7
+S075,Metro City,University,False,,11396,11413,0.81,9.7,261000,20,4.5,11332,12,3.0
