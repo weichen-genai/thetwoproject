@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About The T-W-O Project and how it helps teams redesign work for the GenAI era.">
+  <meta name="description" content="About The T-W-O Project: the people and working principles behind its GenAI research, writing, teaching, and applied experiments.">
   <link rel="canonical" href="https://thetwoproject.com/about.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="The T-W-O Project">
   <meta property="og:title" content="About The T-W-O Project">
-  <meta property="og:description" content="About The T-W-O Project, an initiative led by Wei Chen to help teams redesign work for the GenAI era.">
+  <meta property="og:description" content="About The T-W-O Project: the people and working principles behind its GenAI research, writing, teaching, and applied experiments.">
   <meta property="og:url" content="https://thetwoproject.com/about.html">
   <meta property="og:image" content="https://thetwoproject.com/images/LOGO-W-TEXT.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About The T-W-O Project">
-  <meta name="twitter:description" content="About The T-W-O Project, an initiative led by Wei Chen to help teams redesign work for the GenAI era.">
+  <meta name="twitter:description" content="About The T-W-O Project: the people and working principles behind its GenAI research, writing, teaching, and applied experiments.">
   <meta name="twitter:image" content="https://thetwoproject.com/images/LOGO-W-TEXT.png">
   <title>About | The T-W-O Project</title>
   <script type="application/ld+json">
@@ -27,16 +27,27 @@
         "url": "https://thetwoproject.com/",
         "logo": "https://thetwoproject.com/images/LOGO-W-TEXT.png",
         "email": "info@thetwoproject.com",
-        "description": "The T-W-O Project is a thought-leadership and applied workflow design initiative focused on how generative AI changes tasks, workflows, and organizations.",
-        "member": {
-          "@id": "https://thetwoproject.com/about.html#wei-chen"
-        }
+        "description": "The T-W-O Project is the public home for work led by Wei Chen and collaborators on GenAI research, writing, teaching, workflow ownership, and organizational change.",
+        "member": [
+          {
+            "@id": "https://thetwoproject.com/about.html#wei-chen"
+          },
+          {
+            "@id": "https://thetwoproject.com/about.html#fasheng-xu"
+          },
+          {
+            "@id": "https://thetwoproject.com/about.html#puru-dani"
+          }
+        ]
       },
       {
         "@type": "Person",
         "@id": "https://thetwoproject.com/about.html#wei-chen",
         "name": "Wei Chen",
         "url": "https://weichen.info/",
+        "sameAs": [
+          "https://www.linkedin.com/in/wei-chen-60980627/"
+        ],
         "affiliation": [
           {
             "@type": "CollegeOrUniversity",
@@ -50,37 +61,42 @@
         "jobTitle": "Associate Professor of Operations and Information Management"
       },
       {
+        "@type": "Person",
+        "@id": "https://thetwoproject.com/about.html#fasheng-xu",
+        "name": "Fasheng Xu",
+        "url": "https://www.fashengxu.com/",
+        "sameAs": [
+          "https://www.linkedin.com/in/fasheng-xu-90b27a38/"
+        ],
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Connecticut School of Business"
+        },
+        "jobTitle": "Assistant Professor of Operations and Information Management"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://thetwoproject.com/about.html#puru-dani",
+        "name": "Puru Dani",
+        "sameAs": [
+          "https://www.linkedin.com/in/purudani/"
+        ],
+        "affiliation": {
+          "@type": "Organization",
+          "name": "The T-W-O Project"
+        },
+        "jobTitle": "AI Engineer and Project Collaborator"
+      },
+      {
         "@type": "WebPage",
         "@id": "https://thetwoproject.com/about.html#webpage",
         "url": "https://thetwoproject.com/about.html",
         "name": "About | The T-W-O Project",
-        "description": "About The T-W-O Project and how it helps teams redesign work for the GenAI era.",
+        "description": "About The T-W-O Project: the people and working principles behind its GenAI research, writing, teaching, and applied experiments.",
         "about": {
           "@id": "https://thetwoproject.com/#organization"
         },
-        "dateModified": "2026-08-19"
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://thetwoproject.com/about.html#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Who is behind The T-W-O Project?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The T-W-O Project is led by Wei Chen, Associate Professor of Operations and Information Management at the University of Connecticut School of Business and Academic Director of the Digital Frontiers Initiative."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the mission of The T-W-O Project?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The mission of The T-W-O Project is to close the gap between what AI can do at the task level and what organizations need to redesign in order to benefit from it."
-            }
-          }
-        ]
+        "dateModified": "2026-08-27"
       }
     ]
   }
@@ -100,7 +116,7 @@
 
     gtag('config', 'G-9XBXGC7R7V');
   </script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=about-intro-20260827">
 </head>
 <body>
   <header class="site-header">
@@ -119,145 +135,71 @@
     </div>
   </header>
 
-  <main>
-    <section class="hero hero-compact">
-      <div class="site-shell">
-        <div class="hero-panel hero-panel-flat hero-panel-compact narrow-flow">
-          <p class="eyebrow">About</p>
-          <h1>About The T-W-O Project</h1>
-          <p class="hero-line">The T-W-O Project helps teams redesign work for the GenAI era by connecting ideas, stories, research, and practical workflow programs.</p>
-        </div>
-      </div>
-    </section>
+  <main class="about-page about-page-studio">
+    <section class="about-studio-section" aria-labelledby="about-heading">
+      <div class="site-shell about-studio-shell">
+        <header class="about-centerpiece">
+          <h1 id="about-heading">The T-W-O Project</h1>
+          <p class="about-intro-copy">We study the organizational side of generative AI: how work changes, who owns the change, and how teams learn to make it practical.</p>
+        </header>
 
-    <section class="section section-bordered">
-      <div class="site-shell narrow-flow">
-        <p class="section-label">What It Is</p>
-        <h2>A thought-leadership and applied workflow design initiative.</h2>
-        <p>The T-W-O Project is a thought-leadership and applied workflow design initiative focused on how generative AI changes tasks, workflows, and organizations.</p>
-        <p>The project is built around a simple idea: AI changes tasks, but transformation happens when teams redesign workflows and organizations around new capabilities.</p>
-      </div>
-    </section>
+        <div class="about-studio-stack">
+          <section class="about-studio-panel about-doing-panel" aria-labelledby="about-doing-heading">
+            <p class="section-label">What We're Doing</p>
+            <h2 id="about-doing-heading">Making the hard parts of GenAI adoption easier to see, discuss, and test.</h2>
+            <p class="about-block-copy">We use one method in everything we do, from a workshop to a hands-on build: align on how the work happens today, prioritize where AI actually helps, and build a working redesign together.</p>
+            <div class="about-verb-grid" aria-label="Our three-step method">
+              <article>
+                <span>Align</span>
+                <p>Get the team looking at the same workflow, the same way.</p>
+              </article>
+              <article>
+                <span>Prioritize</span>
+                <p>Decide where AI is worth using, and where it isn't.</p>
+              </article>
+              <article>
+                <span>Build</span>
+                <p>Turn the redesign into something real and testable.</p>
+              </article>
+            </div>
+          </section>
 
-    <section class="section section-quiet">
-      <div class="site-shell">
-        <div class="section-intro narrow-flow">
-          <p class="section-label">What T-W-O Means</p>
-          <h2>Three layers of change.</h2>
+          <section class="about-studio-panel about-who-panel" aria-labelledby="about-who-heading">
+            <p class="section-label">Who</p>
+            <h2 id="about-who-heading">A small collaboration with research, operations, and AI implementation experience.</h2>
+            <div class="about-person-list">
+              <a class="about-person-card" href="https://www.linkedin.com/in/wei-chen-60980627/" target="_blank" rel="noopener noreferrer">
+                <img class="about-person-photo" src="images/team/wei-chen.png" alt="Wei Chen" width="320" height="320" loading="lazy">
+                <span class="about-person-copy">
+                  <strong>Wei Chen</strong>
+                  <em>Author and Project lead</em>
+                  <span>Associate Professor, UConn School of Business. Academic Director, Digital Frontiers Initiative.</span>
+                </span>
+              </a>
+              <a class="about-person-card" href="https://www.linkedin.com/in/fasheng-xu-90b27a38/" target="_blank" rel="noopener noreferrer">
+                <img class="about-person-photo" src="images/team/fasheng-xu.png" alt="Fasheng Xu" width="320" height="320" loading="lazy">
+                <span class="about-person-copy">
+                  <strong>Fasheng Xu</strong>
+                  <em>Author and collaborator</em>
+                  <span>Assistant Professor, UConn School of Business.</span>
+                </span>
+              </a>
+              <a class="about-person-card" href="https://www.linkedin.com/in/purudani/" target="_blank" rel="noopener noreferrer">
+                <img class="about-person-photo" src="images/team/puru-dani.png" alt="Puru Dani" width="320" height="320" loading="lazy">
+                <span class="about-person-copy">
+                  <strong>Puru Dani</strong>
+                  <em>Project collaborator</em>
+                  <span>AI engineer supporting publishing workflows, project execution, and applied experiments.</span>
+                </span>
+              </a>
+            </div>
+          </section>
         </div>
-        <div class="resource-grid">
-          <article class="resource-card">
-            <p class="section-label">Task</p>
-            <h3>What AI changes at the activity level.</h3>
-          </article>
-          <article class="resource-card">
-            <p class="section-label">Workflow</p>
-            <h3>How teams redesign the sequence of work around AI, tools, and human judgment.</h3>
-          </article>
-          <article class="resource-card">
-            <p class="section-label">Organization</p>
-            <h3>How roles, ownership, governance, and coordination evolve around new capabilities.</h3>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <section class="section section-bordered section-quiet">
-      <div class="site-shell">
-        <div class="section-intro narrow-flow">
-          <p class="section-label">How The Pieces Fit</p>
-          <h2>The project connects narrative, framework, education, and applied redesign work.</h2>
+        <div class="about-contact-strip">
+          <p>For questions, collaborations, and media inquiries.</p>
+          <a href="mailto:info@thetwoproject.com">info@thetwoproject.com</a>
         </div>
-        <div class="card-grid">
-          <article class="info-card">
-            <h3>The Owner</h3>
-            <p>The narrative entry point: a business novel about work, ownership, and transformation in the GenAI era.</p>
-          </article>
-          <article class="info-card">
-            <h3>The T-W-O Framework</h3>
-            <p>The conceptual foundation for understanding how AI changes tasks, workflows, and organizations.</p>
-          </article>
-          <article class="info-card">
-            <h3>AI-Native Workflow Bootcamp</h3>
-            <p>The practical entry point for teams to map, redesign, and evaluate real business workflows.</p>
-          </article>
-          <article class="info-card">
-            <h3>Workflow Opportunity Report</h3>
-            <p>A post-bootcamp analysis that turns submitted workflows into an executive-ready opportunity map.</p>
-          </article>
-          <article class="info-card">
-            <h3>AI-Native Workflow Sprint</h3>
-            <p>A focused 2-4 week engagement to redesign and prototype one high-value workflow.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-bordered">
-      <div class="site-shell content-grid">
-        <div class="narrow-flow">
-          <p class="section-label">Who Is Behind It</p>
-          <h2>Led by Wei Chen.</h2>
-          <p>The T-W-O Project is led by Wei Chen, Associate Professor of Operations and Information Management at the University of Connecticut School of Business and Academic Director of the Digital Frontiers Initiative.</p>
-          <p>Wei's research focuses on the business applications, design, and governance of generative AI, including platforms, crowds, fintech, and organizational transformation. His work has appeared in leading journals including <em>Management Science</em>, <em>Information Systems Research</em>, <em>MIS Quarterly</em>, and <em>Production and Operations Management</em>.</p>
-          <p>Through The T-W-O Project, Wei connects academic research, business storytelling, and practical workflow redesign for organizations adopting generative AI.</p>
-        </div>
-        <aside class="feature-note" aria-label="Trust summary">
-          <p class="note-title">Why trust the project</p>
-          <p>The T-W-O Project connects published research, teaching, executive education, narrative work, and real workflow engagements. It is designed to help organizations think clearly and act practically.</p>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section section-bordered section-quiet" aria-labelledby="about-faq-heading">
-      <div class="site-shell">
-        <div class="section-intro narrow-flow">
-          <p class="section-label">Entity summary</p>
-          <h2 id="about-faq-heading">The project, lead, and mission in brief.</h2>
-        </div>
-        <div class="resource-grid">
-          <article class="resource-card">
-            <h3>Who is behind The T-W-O Project?</h3>
-            <p>The T-W-O Project is led by Wei Chen, Associate Professor of Operations and Information Management at the University of Connecticut School of Business and Academic Director of the Digital Frontiers Initiative.</p>
-          </article>
-          <article class="resource-card">
-            <h3>What is the mission of The T-W-O Project?</h3>
-            <p>The mission of The T-W-O Project is to close the gap between what AI can do at the task level and what organizations need to redesign in order to benefit from it.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-quiet">
-      <div class="site-shell">
-        <div class="section-intro narrow-flow">
-          <p class="section-label">Supported By Collaborators</p>
-          <h2>A focused project, supported by collaborators.</h2>
-          <p>The project is supported by collaborators who help develop research, teaching materials, bootcamp content, and applied workflow experiments.</p>
-        </div>
-        <div class="team-grid">
-          <div class="team-group">
-            <p class="team-role">Lead</p>
-            <p class="team-names"><a href="https://weichen.info/">Wei Chen</a></p>
-          </div>
-          <div class="team-group">
-            <p class="team-role">Collaborator</p>
-            <p class="team-names"><a href="https://www.fashengxu.com/">Fasheng Xu</a></p>
-          </div>
-          <div class="team-group">
-            <p class="team-role">Collaborator</p>
-            <p class="team-names">Puru Dani</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-bordered section-quiet">
-      <div class="site-shell narrow-flow">
-        <p class="section-label">Mission</p>
-        <h2>Closing the gap between AI capability and organizational redesign.</h2>
-        <p>The mission of The T-W-O Project is to close the gap between what AI can do at the task level and what organizations need to redesign in order to benefit from it.</p>
-        <p>We help teams move from AI experiments to AI-native workflows that combine human judgment, AI capabilities, tools, and evaluation.</p>
       </div>
     </section>
   </main>
